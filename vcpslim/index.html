@@ -585,9 +585,16 @@
                                 </div>
                             </div>
                         </div>
+
+
+
                 </div>
             </div>
+
+
+
         </div>
+
 
         <div class="wpo-ne-footer">
             <!-- start wpo-site-footer -->
@@ -595,6 +602,9 @@
                 <div class="wpo-lower-footer">
                     <div class="container">
                         <div class="row">
+                            <div class="col col-xs-12">
+                                <a href="/change-church.html"><p class="btn btn-warning">Change Church</p></div>
+                            </div>
                             <div class="col col-xs-12">
                                 <p class="copyright">&copy; 2020 Christ Embassy. All Rights Reserved ver1.1</p>
                             </div>
@@ -764,6 +774,27 @@
     </div>
 
 
+<div class="modal fade" id="changeChurch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="changeChurchmodal">Give with PayPal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="zonallist"></div>
+                <div id="zones_div"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"-->
      <!--aria-hidden="true" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false">-->
@@ -1256,7 +1287,7 @@
           'class="theme-btn">Next Service</a></li>'
       var online =
           '<li class="theme-btn btn-info"><a href="https://adm.cevirtualchurch.org/admin-login" target="_blank" style="color:white;text-align: ' +
-          'center">Admin Section</a><li class="theme-btn" id="logout-btn"><a href="#" onclick="logout()" style="color:white;text-align: ' +
+          'center">Admin Section</a></li><li class="theme-btn" id="logout-btn"><a href="#" onclick="logout()" style="color:white;text-align: ' +
           'center">Logout</a>'
 
 
@@ -1491,7 +1522,141 @@
     }
 </script>
 
+<script>
+    function loadZones(){
 
+        $('#changeChurch').modal('show');
+
+
+        $("#zonallist").html("<div align='center'><i class='fa fa-spinner fa-spin'></i> <br /> ... loading zones ...</div>")
+
+        $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : 'https://api.cevirtualchurch.org/zone/index', // the url where we want to POST
+            dataType    : 'json', // what type of data do we expect back from the server
+            encode          : true
+        })
+
+        //
+        // using the done promise callback
+            .done(function(data) {
+
+                console.log(data.data);
+                // alert("I dididid")
+                // log data to the console so we can see
+                // console.log("I got here too just now");
+//
+//                    //if number is on kingschat then process
+                if(data.status){
+                    // alert("true")
+
+                    //   NProgress.done();
+
+                    var obj = "";
+
+                    obj += "<option value=''>Please Select your Zone</option>";
+
+                    for(var i = 0; i < data.data.zones.length;i++){
+                        obj += "<option value='"+data.data.zones[i].zoneID+"'>"+data.data.zones[i].name+"</option >";
+                    }
+
+                    var final = '<div class="col-lg-12 col-md-12 col-12" style="margin-bottom: 15px;"> <label ' +
+                        'for="country">Select your Zone</label><select onchange="loadChurchZone()" class="form-control" required ' +
+                        'id="zones_div">'+obj+'</select></div>'
+
+                    $("#zonallist").html(final);
+
+
+                    //localStorage.setItem('authuser',JSON.stringify(datar));
+
+                    // location.href="/video"
+
+                    //reset form
+
+
+                }else{
+
+                    //alert("false")
+                    NProgress.done();
+
+                    $("#message_div").notify(data.message, {className: 'error',autoHide: false,
+                    } );
+                }
+
+                // here we will handle errors and validation messages
+            });
+    }
+</script>
+
+<script>
+    function loadChurchZone (){
+
+        var zoneID = $("#zones_div").val();
+
+        $("#churcheslist").html("<div align='center'><i class='fa fa-spinner fa-spin'></i> <br /> ... loading " +
+            "churches" +
+            " ...");
+
+
+        if(zoneID != ""){
+
+            var formData = {
+
+                'zoneID'     : zoneID,
+            };
+
+            $.ajax({
+                type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                url         : 'https://api.cevirtualchurch.org/zone/churches', // the url where we want to POST
+                data        : formData,
+                dataType    : 'json', // what type of data do we expect back from the server
+                encode          : true
+            })
+
+            //
+            // using the done promise callback
+                .done(function(data) {
+
+                    if(data.status) {
+
+                        var obj = "";
+
+                        obj += "<option value=''>Please Select your Church</option>";
+
+                        for (var i = 0; i < data.data.churches.length; i++) {
+                            obj += "<option value='" + data.data.churches[i].share_code + "'>" + data.data.churches[i].name + "</option >";
+                        }
+
+                        var final = '<div class="col-lg-12 col-md-12 col-12" style="margin-bottom: 15px;"> <label ' +
+                            'for="country">Select your Church</label><select onchange="selectChurchCode()" ' +
+                            'class="form-control" required ' +
+                            'id="churches_div">' + obj + '</select></div>';
+
+
+                        $("#churcheslist").html(final);
+
+
+                    }
+                });
+        }else{
+            $.notify("All fields are required", {className: 'error',autoHide: false,});
+        }
+
+
+    }
+
+
+    function selectChurchCode() {
+
+        $("#share_code").attr("value",$("#churches_div").val());
+
+    }
+
+
+
+
+
+</script>
 
 <script>
     function logout (){

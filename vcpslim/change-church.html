@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="wpoceans">
+
+    <meta name="keywords" content="church, online church,virtual church,god,pastor chris,christ embassy,evangelism,cyber evangelism,online church services" />
+    <meta name="IMM" content="Church" />
+
+    <meta property="og:image" content="assets/images/vcp_splash.png" />
+    <meta property="og:title" content="Sign up now!" />
+    <meta property="og:type" content="website" />
+
+    <title>VCP - Change Church </title>
+    <!-- Favicon and Touch Icons -->
+    <link href="assets/images/favicon.png" rel="shortcut icon" type="image/png">
+
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/slick-theme.css" rel="stylesheet">
+    <link href="assets/css/swiper.min.css" rel="stylesheet">
+    <link href="assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <link href="assets/css/signup.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!-- start preloader -->
+<div class="preloader">
+    <div class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube"></div>
+        <div class="sk-cube2 sk-cube"></div>
+        <div class="sk-cube4 sk-cube"></div>
+        <div class="sk-cube3 sk-cube"></div>
+    </div>
+</div>
+<!-- end preloader -->
+<div class="wpo-login-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form class="wpo-accountWrapper" action="#">
+                    <div class="wpo-accountInfo">
+                        <div class="image">
+                            <a href="/"><img src="assets/images/logo.png" alt="" width="40%"></a>
+                            <!--<a class="wpo-accountBtn" href="login.html">-->
+                            <!--<span class="">Log in</span>-->
+                            <!--</a>-->
+                        </div>
+                        <div class="image">
+                            <img src="assets/images/phone_hand.png" alt="">
+                        </div>
+                        <div class="center-block">
+                            <a class="wpo-accountBtn" href="/index.html">
+                                <span class="">Back To Home</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="wpo-accountForm form-style">
+                        <div class="image" align="center">
+                            <a href="/"><img src="assets/images/logo_black.png" alt="" width="40%"></a>
+                        </div>
+                        <div class="fromTitle" align="center">
+                            <h2>Change Church</h2>
+                            <p id="message_div" class="alert alert-warning">Note: You will only be allowed to change
+                            your church once.</p>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <label>Full Name</label>
+                                <input type="text" id="full_name" name="email" placeholder="Your email here.." disabled>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <label>Email</label>
+                                <input type="text" id="email" name="email" placeholder="Your email here.." disabled>
+                            </div>
+
+
+
+                            <div id="zonallist">
+
+                            </div>
+
+                            <div id="churcheslist">
+
+                            </div>
+
+                            <input type="hidden" id="share_code" value="">
+
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <div class="check-box-wrap">
+                                    <div class="input-box">
+                                        <input type="checkbox"  id="fruit4" name="fruit-4" value="Strawberry" required>
+                                        <label for="fruit4"> Are you sure you want to change church?</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 col-12">
+                                <button type="submit" class="wpo-accountBtn" id="reg_btn">Submit</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- All JavaScript files
+================================================== -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106770506-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-106770506-2');
+</script>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- Plugins for this template -->
+<script src="assets/js/jquery-plugin-collection.js"></script>
+<!-- Custom script for this template -->
+<script src="assets/js/script.js"></script>
+<script src="assets/js/notify.js"></script>
+
+
+<script>
+    $(".reveal").on('click', function() {
+        var $pwd = $(".pwd");
+        if ($pwd.attr('type') === 'text') {
+            $pwd.attr('type', 'password');
+        } else {
+            $pwd.attr('type', 'text');
+        }
+    });
+    $(".reveal2").on('click', function() {
+        var $pwd = $(".pwdr");
+        if ($pwd.attr('type') === 'text') {
+            $pwd.attr('type', 'password');
+        } else {
+            $pwd.attr('type', 'text');
+        }
+    });
+
+
+</script>
+
+<script>
+
+    // NProgress.start();
+
+    var userData = JSON.parse(localStorage.getItem('authuser'));
+
+
+    $("#full_name").attr("value",userData.user.userDetails.firstName+" "+userData.user.userDetails.lastName)
+    $("#email").attr("value",userData.user.userDetails.emailAddress)
+
+
+
+    if(userData == null && userData == ""){
+
+        window.location.href="/login.html"
+    }
+
+   // var email,share_code,zone,churches_div = "";
+
+    $('#reg_btn').click(function (e){
+
+        e.preventDefault();
+
+        var email  = document.getElementById("email").value;
+        var share_code  = document.getElementById("share_code").value;
+        var zone  = document.getElementById("zones_div").value;
+        var churches_div  = document.getElementById("churches_div").value;
+
+
+        //  alert(share_code);
+
+
+        if(zone != "" && zone !=null && share_code != "" && share_code !=null && churches_div != "" && churches_div !=null) {
+
+            if (document.getElementById("fruit4").checked) {
+
+
+            $("#reg_btn").html("<i class='fa fa-spinner fa-spin'></i>... registering ...")
+
+            var formData = {
+
+
+                'userID': userData.user.userDetails.userID,
+                'churchID': share_code,
+            };
+
+            //alert("I got here");
+
+
+            $.ajax({
+                type: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                url: 'https://api.cevirtualchurch.org/auth/changechurch', // the url where we want to POST
+                data: formData,
+                dataType: 'json', // what type of data do we expect back from the server
+                encode: true
+            })
+
+            //
+            // using the done promise callback
+                .done(function (data) {
+
+                    console.log(data.data);
+
+
+                    if (data.status) {
+
+
+
+                        localStorage.removeItem('authuser');
+                        location.href = "/login.html?msg=Church Change was Successful";
+
+                        //reset form
+
+
+                    } else {
+
+                        // alert("false")
+                        //NProgress.done();
+
+                        $("#message_div").notify(data.message, {
+                            className: 'error', autoHide: false,
+                        });
+                        $("#reg_btn").html("Submit")
+                    }
+
+                    // here we will handle errors and validation messages
+                });
+
+            }else {
+                $("#message_div").notify("All fields are required", {className: 'error',autoHide: true,
+                } );
+            }
+        }else{
+
+            $("#message_div").notify("Please check the confirmation box",
+                {className: 'error',autoHide: true,
+            } );
+            $("#reg_btn").html("Submit")
+
+        }
+    })
+</script>
+
+
+
+
+<script>
+
+
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            }
+        }
+    };
+
+
+    var msg = getUrlParameter('_inv');
+
+    //alert(msg)
+
+    if(msg == "" || msg == null){
+
+
+    $("#zonallist").html("<div align='center'><i class='fa fa-spinner fa-spin'></i> <br /> ... loading zones ...</div>")
+
+    $.ajax({
+        type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+        url         : 'https://api.cevirtualchurch.org/zone/index', // the url where we want to POST
+        dataType    : 'json', // what type of data do we expect back from the server
+        encode          : true
+    })
+
+    //
+    // using the done promise callback
+        .done(function(data) {
+
+            console.log(data.data);
+            // alert("I dididid")
+            // log data to the console so we can see
+            // console.log("I got here too just now");
+//
+//                    //if number is on kingschat then process
+            if(data.status){
+                // alert("true")
+
+                //   NProgress.done();
+
+                var obj = "";
+
+                obj += "<option value=''>Please Select your Zone</option>";
+
+                for(var i = 0; i < data.data.zones.length;i++){
+                    obj += "<option value='"+data.data.zones[i].zoneID+"'>"+data.data.zones[i].name+"</option >";
+                }
+
+                var final = '<div class="col-lg-12 col-md-12 col-12" style="margin-bottom: 15px;"> <label ' +
+                    'for="country">Select your Zone</label><select onchange="loadChurchZone()" class="form-control" required ' +
+                    'id="zones_div" required>'+obj+'</select></div>'
+
+                $("#zonallist").html(final);
+
+
+                //localStorage.setItem('authuser',JSON.stringify(datar));
+
+                // location.href="/video"
+
+                //reset form
+
+
+            }else{
+
+                //alert("false")
+                NProgress.done();
+
+                $("#message_div").notify(data.message, {className: 'error',autoHide: false,
+                } );
+            }
+
+            // here we will handle errors and validation messages
+        });
+
+    }else{
+        $("#share_code").attr("value",msg);
+    }
+</script>
+
+<script>
+    function loadChurchZone (){
+
+        var zoneID = $("#zones_div").val();
+
+        $("#churcheslist").html("<div align='center'><i class='fa fa-spinner fa-spin'></i> <br /> ... loading " +
+            "churches" +
+            " ...");
+
+
+        if(zoneID != ""){
+
+            var formData = {
+
+                'zoneID'     : zoneID,
+            };
+
+            $.ajax({
+                type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                url         : 'https://api.cevirtualchurch.org/zone/churches', // the url where we want to POST
+                data        : formData,
+                dataType    : 'json', // what type of data do we expect back from the server
+                encode          : true
+            })
+
+            //
+            // using the done promise callback
+                .done(function(data) {
+
+                    if(data.status) {
+
+                        var obj = "";
+
+                        obj += "<option value=''>Please Select your Church</option>";
+
+                        for (var i = 0; i < data.data.churches.length; i++) {
+                            obj += "<option value='" + data.data.churches[i].churchID + "'>" + data.data.churches[i].name + "</option >";
+                        }
+
+                        var final = '<div class="col-lg-12 col-md-12 col-12" style="margin-bottom: 15px;"> <label ' +
+                            'for="country">Select your Church</label><select onchange="selectChurchCode()" ' +
+                            'class="form-control" required ' +
+                            'id="churches_div">' + obj + '</select></div>';
+
+
+                        $("#churcheslist").html(final);
+
+
+                    }
+                });
+        }else{
+            $.notify("All fields are required", {className: 'error',autoHide: false,});
+        }
+
+
+    }
+
+
+    function selectChurchCode() {
+
+        $("#share_code").attr("value",$("#churches_div").val());
+
+    }
+
+
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>
