@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="wpoceans">
+
+    <meta name="keywords" content="church, online church,virtual church,god,pastor chris,christ embassy,evangelism,cyber evangelism,online church services" />
+    <meta name="IMM" content="Church" />
+
+    <meta property="og:image" content="assets/images/vcp_splash.png" />
+    <meta property="og:title" content="Please login to continue" />
+    <meta property="og:type" content="website" />
+
+    <title>VCP - Login</title>
+    <!-- Favicon and Touch Icons -->
+    <link href="assets/images/favicon.png" rel="shortcut icon" type="image/png">
+
+    <link href="assets/css/themify-icons.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/flaticon.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.css" rel="stylesheet">
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <link href="assets/css/slick-theme.css" rel="stylesheet">
+    <link href="assets/css/swiper.min.css" rel="stylesheet">
+    <link href="assets/css/owl.transitions.css" rel="stylesheet">
+    <link href="assets/css/jquery.fancybox.css" rel="stylesheet">
+    <link href="assets/css/odometer-theme-default.css" rel="stylesheet">
+    <link href="assets/css/nice-select.css" rel="stylesheet">
+    <link href="assets/css/signup.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet">
+      <![endif]-->
+</head>
+
+<body>
+
+<style>
+    #nprogress .bar {
+        background: #29d !important;
+    }
+</style>
+    <!-- start preloader -->
+    <div class="preloader">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+    </div>
+    <!-- end preloader -->
+    <div class="wpo-login-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="wpo-accountWrapper" action="#">
+                        <div class="wpo-accountInfo">
+                            <div class="image">
+                                <a href="/"><img src="assets/images/logo.png" alt="" width="40%"></a>
+                            </div>
+                            <div class="image">
+                                <img src="assets/images/phone_hand.png" alt="">
+                            </div>
+                            <div class="center-block">
+                                <a class="wpo-accountBtn" href="#">
+                                    <span class="">Back To Home</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="wpo-accountForm form-style">
+                            <div class="fromTitle">
+                                <div class="image" align="center">
+                                    <a href="/"><img src="assets/images/logo_black.png" alt="" width="40%"></a>
+                                </div>
+
+                                <h2>Login Here</h2>
+                                <p id="message_div"></p>
+                                <div ></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <label>Email</label>
+                                    <input type="email" id="email" name="email" placeholder="your email">
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <div class="form-group">
+                                        <label >Number of participants</label>
+                                        <input type="number" min="" placeholder="participants"  value="" id="part">
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <button type="submit" class="wpo-accountBtn" id="login_btn">Login</button>
+                                </div>
+                            </div>
+                            <h4 class="or"><span>OR</span></h4>
+
+                            <p class="subText">Don't have an account? <a href="/register.html" class="theme_dull-btn"
+                                                                         style="color: #062265; font-weight: 500;">Join a Church</a></p>
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-106770506-2"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-106770506-2');
+</script>
+
+
+    <!-- All JavaScript files
+    ================================================== -->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Plugins for this template -->
+    <script src="assets/js/jquery-plugin-collection.js"></script>
+    <!-- Custom script for this template -->
+    <script src="assets/js/script.js"></script>
+
+    <script src="assets/js/notify.js"></script>
+
+  <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
+
+
+
+<script>
+
+   // NProgress.start();
+
+    var userData = JSON.parse(localStorage.getItem('authuser'));
+
+
+    if(userData != null && userData!=""){
+
+        window.location.href="/index.html"
+    }
+
+    $('#login_btn').click(function (e){
+
+        e.preventDefault;
+        var email  = $("#email").val();
+        var participants  = $("#part").val();
+
+        if(email != "" && participants != ""){
+
+            $("#login_btn").html("... Logging you in")
+
+
+            var formData = {
+
+                'email'     : email,
+                'groupAttendance'      : participants,
+            };
+
+
+            $.ajax({
+                type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                url         : 'https://api.cevirtualchurch.org/auth/login', // the url where we want to POST
+                data        : formData,
+                //dataType    : 'json', // what type of data do we expect back from the server
+                encode          : true
+            })
+
+
+            // using the done promise callback
+                .done(function(data) {
+
+
+                    if(data.status){
+
+
+                        const datar = {
+                            status:data.status,
+                            user:data.data
+                        }
+
+
+                        //store logged in user
+                        localStorage.setItem('authuser',JSON.stringify(datar));
+
+                        //store login data stamp
+                        var today = new Date();
+                        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+                        localStorage.setItem('loginstamp',date);
+
+                        location.href="/index.html"
+
+
+                    }else{
+
+                        //alert("false")
+                        NProgress.done();
+
+                        $("#message_div").notify(data.message, {className: 'error',autoHide: false,
+                        } );
+                        $("#login_btn").html("Login")
+                    }
+
+                    // here we will handle errors and validation messages
+                });
+        }else{
+
+            $("#message_div").notify("All fields are required", {className: 'error',autoHide: true,
+            } );
+            $("#login_btn").html("Login")
+
+        }
+    })
+
+   var getUrlParameter = function getUrlParameter(sParam) {
+       var sPageURL = window.location.search.substring(1),
+           sURLVariables = sPageURL.split('&'),
+           sParameterName,
+           i;
+
+       for (i = 0; i < sURLVariables.length; i++) {
+           sParameterName = sURLVariables[i].split('=');
+
+           if (sParameterName[0] === sParam) {
+               return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+           }
+       }
+   };
+
+
+   var msg = getUrlParameter('msg');
+    if(msg != ""){
+        $("#message_div").html(msg)
+    }
+</script>
+</body>
+
+</html>
