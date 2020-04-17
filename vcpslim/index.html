@@ -34,6 +34,9 @@
     <link href="assets/css/nice-select.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/compiled/flipclock.css">
+
+
 
     <script>
 
@@ -164,7 +167,15 @@
                                 <!--<div class="wpo-about-video-img">-->
                                     <!--<img src="assets/images/live_video_pix.jpg" alt="">-->
 
+                                <div id="clock-div" style="display: none;" align="center">
+                                    <h2 style="text-align: center">Next Service Starts in:</h2>
+                                    <br />
+                                    <br />
+                                <div class="clock" style="width:100%;"></div>
+                                </div>
+
                                 <div id="video-div">
+
 
 
 
@@ -603,7 +614,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col col-xs-12">
-                                <a href="/change-church.html"><p class="btn btn-warning">Change Church</p></div>
+                                <a href="/change-church.html"><p class="btn btn-warning">Change Church</p></a></div>
                             </div>
                             <div class="col col-xs-12">
                                 <p class="copyright">&copy; 2020 Christ Embassy. All Rights Reserved ver1.1</p>
@@ -774,59 +785,38 @@
     </div>
 
 
-<div class="modal fade" id="changeChurch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="changeChurchmodal">Give with PayPal</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+
             <div class="modal-body">
-                <div id="zonallist"></div>
-                <div id="zones_div"></div>
+                <div align="center" id="login_stamp_holder">
+
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="form-group">
+                            <h3 >Number of Participants</h3>
+                            <input type="number" class="form-control" min="" placeholder="participants"  value=""
+                                   id="part">
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <button type="submit" class="wpo-accountBtn theme-btn" id="login_btn" onclick="submit_login_stamp()">Submit
+                        </button>
+                    </div>
+
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
 
             </div>
         </div>
     </div>
 </div>
-
-<!--<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"-->
-     <!--aria-hidden="true" data-controls-modal="your_div_id" data-backdrop="static" data-keyboard="false">-->
-    <!--<div class="modal-dialog" role="document">-->
-        <!--<div class="modal-content">-->
-
-            <!--<div class="modal-body">-->
-                <!--<div align="center" id="login_stamp_holder">-->
-
-                    <!--<div class="col-lg-12 col-md-12 col-12">-->
-                        <!--<div class="form-group">-->
-                            <!--<h3 >Number of Participants</h3>-->
-                            <!--<input type="number" class="form-control" min="" placeholder="participants"  value=""-->
-                                   <!--id="part">-->
-                        <!--</div>-->
-
-                    <!--</div>-->
-
-                    <!--<div class="col-lg-12 col-md-12 col-12">-->
-                        <!--<button type="submit" class="wpo-accountBtn theme-btn" id="login_btn" onclick="submit_login_stamp()">Submit-->
-                        <!--</button>-->
-                    <!--</div>-->
-
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="modal-footer">-->
-
-
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
     <!-- end of page-wrapper -->
     <!-- All JavaScript files
     ================================================== -->
@@ -862,6 +852,7 @@
 
 
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/compiled/flipclock.js"></script>
     <script src="https://vjs.zencdn.net/7.3.0/video.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- Plugins for this template -->
@@ -894,83 +885,87 @@
 
 
 
-//    var loginStamp = localStorage.getItem('loginstamp');
-//    var today = new Date();
-//    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var loginStamp = localStorage.getItem('loginstamp');
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+    if(loginStamp != date){
+        $('#loginModal').modal('show');
+    }
+
+    function submit_login_stamp() {
+
+        var userData = JSON.parse(localStorage.getItem('authuser'));
+
+
+        var part =  $('#part').val();
+
+
+        if(part != ""){
+
+            // var userData = JSON.parse(localStorage.getItem('authuser'));
+
+            NProgress.start()
+            $("#login_btn").html("... sending")
+
+            var formData = {
+
+                'email'           : userData.user.userDetails.emailAddress,
+                'groupAttendance'      : part,
+
+            };
+
+            //alert("I got here");
+
+            $.ajax({
+                type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                url         : 'https://api.cevirtualchurch.org/auth/login', // the url where we want to POST
+                data        : formData,
+                // dataType    : 'json', // what type of data do we expect back from the server
+                encode          : true
+            })
+
+            //  NProgress.start()
+            // using the done promise callback
+                .done(function(data) {
+
+                    // alert("I dididid")
+                    // log data to the console so we can see
+                    // console.log("I got here too just now");
 //
-//    if(loginStamp != date){
-//       // $('#loginModal').modal('show');
-//    }
-//
-//    function submit_login_stamp() {
-//
-//        var userData = JSON.parse(localStorage.getItem('authuser'));
-//
-//
-//        var part =  $('#part').val();
-//
-//
-//        if(part != ""){
-//
-//            // var userData = JSON.parse(localStorage.getItem('authuser'));
-//
-//            NProgress.start()
-//            $("#login_btn").html("... sending")
-//
-//            var formData = {
-//
-//                'email'           : userData.user.userDetails.emailAddress,
-//                'groupAttendance'      : part,
-//
-//            };
-//
-//            //alert("I got here");
-//
-//            $.ajax({
-//                type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-//                url         : 'https://api.cevirtualchurch.org/auth/login', // the url where we want to POST
-//                data        : formData,
-//                // dataType    : 'json', // what type of data do we expect back from the server
-//                encode          : true
-//            })
-//
-//            //  NProgress.start()
-//            // using the done promise callback
-//                .done(function(data) {
-//
-//                    // alert("I dididid")
-//                    // log data to the console so we can see
-//                    // console.log("I got here too just now");
-////
-////                    //if number is on kingschat then process
-//                    if(data.status){
-//
-//                        NProgress.done();
-//                        $.notify("successfull", {className: 'success',autoHide: true,
-//                        } );
-//
-//                        $('#loginModal').modal('hide')
-//
-//
-//
-//                    }else{
-//                        NProgress.done();
-//                        $.notify(data.message, {className: 'error',autoHide: false,
-//                        } );
-//
-//                        $("#login_btn").html("Submit")
-//
-//                    }
-//
-//                    // here we will handle errors and validation messages
-//                });
-//        }else{
-//            $("#login_stamp_holder").notify("The Participant field is compulsory", {className: 'error',
-//                autoHide: true,} );
-//        }
-//
-//
-//    }
+//                    //if number is on kingschat then process
+                    if(data.status){
+
+                        var today = new Date();
+                        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+
+                        localStorage.setItem('loginstamp',date);
+                        NProgress.done();
+                        $.notify("successfull", {className: 'success',autoHide: true,
+                        } );
+
+                        $('#loginModal').modal('hide')
+
+
+
+                    }else{
+                        NProgress.done();
+                        $.notify(data.message, {className: 'error',autoHide: false,
+                        } );
+
+                        $("#login_btn").html("Submit")
+
+                    }
+
+                    // here we will handle errors and validation messages
+                });
+        }else{
+            $("#login_stamp_holder").notify("The Participant field is compulsory", {className: 'error',
+                autoHide: true,} );
+        }
+
+
+    }
 </script>
 
 
@@ -1423,10 +1418,51 @@
 
               }else{
 
-                  //alert("false")
                   NProgress.done();
 
-                  $("#video-div").html("<div style='margin-top:100px' class='alert alert-info'>No Active Service</div>");
+                  if(data.data.nextMeetingDetails != null){
+
+
+                      var clock;
+
+                      var tts = Math.round(new Date().getTime() / 1000);
+
+                      var meeting_time = data.data.nextMeetingDetails.startTime - tts;
+                      //1587168000
+                     // console.log(meeting_time);
+
+                      $(document).ready(function() {
+                          var clock;
+
+                          clock = $('.clock').FlipClock({
+                              clockFace: 'DailyCounter',
+                              autoStart: false,
+                              callbacks: {
+                                  stop: function() {
+                                      $.notify("Service starts now, please refresh this page", {className: 'success',autoHide: true,
+                                      } );
+
+                                  }
+                              }
+                          });
+
+                          clock.setTime(meeting_time);
+                          clock.setCountdown(true);
+                          clock.start();
+
+                      });
+
+
+                      $("#video-div").html('');
+                      $("#clock-div").show(1000);
+                  }else{
+                      $("#video-div").html("<div style='margin-top:100px' class='alert alert-info'>No Active Service</div>");
+                  }
+
+
+
+
+
 
               }
 
