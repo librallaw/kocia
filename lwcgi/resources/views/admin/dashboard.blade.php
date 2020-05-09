@@ -45,13 +45,13 @@
 				@include("alert")
 				<div class="row">
 					<div class="col-lg-12">	
-						<h2 class="st_title"><i class="uil uil-apps"></i> Instructor Dashboard</h2>
+						<h2 class="st_title"><i class="uil uil-apps"></i> Admin Dashboard</h2>
 					</div>
 					<div class="col-xl-3 col-lg-6 col-md-6">
 						<div class="card_dash">
 							<div class="card_dash_left">
-								<h5>Total Sales</h5>
-								<h2>$350</h2>
+								<h5>Total Revenue</h5>
+								<h2>$0</h2>
 								<span class="crdbg_1">View all sales</span>
 							</div>
 							<div class="card_dash_right">
@@ -62,20 +62,8 @@
 					<div class="col-xl-3 col-lg-6 col-md-6">
 						<div class="card_dash">
 							<div class="card_dash_left">
-								<h5>Total Enroll</h5>
-								<h2>1500</h2>
-								<span class="crdbg_2">View all enrollment</span>
-							</div>
-							<div class="card_dash_right">
-								<img src="/images/dashboard/graduation-cap.svg" alt="">
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-lg-6 col-md-6">
-						<div class="card_dash">
-							<div class="card_dash_left">
 								<h5>Total Courses</h5>
-								<h2>130</h2>
+								<h2>{{count($courses)}}</h2>
 								<span class="crdbg_3">View all courses</span>
 							</div>
 							<div class="card_dash_right">
@@ -87,7 +75,7 @@
 						<div class="card_dash">
 							<div class="card_dash_left">
 								<h5>Total Students</h5>
-								<h2>2650</h2>
+								<h2>{{count($users)}}</h2>
 								<span class="crdbg_4">View all students</span>
 							</div>
 							<div class="card_dash_right">
@@ -95,6 +83,19 @@
 							</div>
 						</div>
 					</div>
+					<div class="col-xl-3 col-lg-6 col-md-6">
+						<div class="card_dash">
+							<div class="card_dash_left">
+								<h5>Total Lectures</h5>
+								<h2>{{count($lectures)}}</h2>
+
+							</div>
+							<div class="card_dash_right">
+								<img src="/images/dashboard/graduation-cap.svg" alt="">
+							</div>
+						</div>
+					</div>
+
 					<div class="col-md-12">
 						<div class="card_dash1">
 							<div class="card_dash_left1">
@@ -102,114 +103,64 @@
 								<h1>Jump Into Course Creation</h1>
 							</div>
 							<div class="card_dash_right1">
-								<button class="create_btn_dash" onclick="window.location.href = 'create_new_course.html';">Create Your Course</button>
+								<button class="create_btn_dash" onclick="window.location.href = '{{route("showCreateCourse")}}';">Create Your Course</button>
 							</div>
 						</div>
 					</div>					
 				</div>
 				<div class="row">
-					<div class="col-xl-4 col-lg-6 col-md-6">
-						<div class="section3125 mt-50">
-							<h4 class="item_title">Latest Courses performance</h4>
-							<div class="la5lo1">
-								<div class="owl-carousel courses_performance owl-theme">
-									<div class="item">
-										<div class="fcrse_1">
-											<a href="/instructor_dashboard.html#" class="fcrse_img">
-												<img src="/images/courses/img-1.jpg" alt="">
-												<div class="course-overlay"></div>
-											</a>
-											<div class="fcrse_content">
-												<div class="vdtodt">
-													<span class="vdt14">First 2 days 22 hours</span>
-												</div>
-												<a href="/instructor_dashboard.html#" class="crsedt145">Complete Python Bootcamp: Go from zero to hero in Python 3</a>
-												<div class="allvperf">
-													<div class="crse-perf-left">View</div>
-													<div class="crse-perf-right">1.5k</div>
-												</div>
-												<div class="allvperf">
-													<div class="crse-perf-left">Purchased</div>
-													<div class="crse-perf-right">150</div>
-												</div>
-												<div class="allvperf">
-													<div class="crse-perf-left">Total Like</div>
-													<div class="crse-perf-right">1k</div>
-												</div>
-												<div class="auth1lnkprce">
-													<a href="/instructor_dashboard.html#" class="cr1fot50">Go to course analytics</a>
-													<a href="/instructor_dashboard.html#" class="cr1fot50">See comments (875)</a>
-													<a href="/instructor_dashboard.html#" class="cr1fot50">See Reviews (105)</a>
+					@if(count($courses) > 0)
+						<div class="col-xl-4 col-lg-6 col-md-6">
+							<div class="section3125 mt-50">
+								<h4 class="item_title">Latest Courses</h4>
+								<div class="la5lo1">
+									<div class="owl-carousel courses_performance owl-theme">
+										@foreach($courses->take(3) as $course)
+											<div class="item">
+												<div class="fcrse_1">
+													<a href="{{route("showViewCourse",['code'=>$course->course_code])}}"
+													   class="fcrse_img">
+														<img src="{{ !empty($course->cover)? "/".$course->cover: "/images/courses/add_img.jpg"}}" alt="">
+														<div class="course-overlay"></div>
+													</a>
+													<div class="fcrse_content">
+
+														<a href="{{route("showViewCourse",
+														['code'=>$course->course_code])}}"
+														   class="crsedt145">{{$course->title}}</a>
+														<div class="allvperf">
+															<div class="crse-perf-left">Category</div>
+															<div class="crse-perf-right">{{$course->category->name
+															}}</div>
+														</div>
+														<div class="allvperf">
+															<div class="crse-perf-left">Lectures</div>
+															<div class="crse-perf-right">{{$course->lectures->count()
+															}}</div>
+														</div>
+														<div class="allvperf">
+															<div class="crse-perf-left">Date Created</div>
+															<div class="crse-perf-right">{{$course->created_at
+															->diffForHumans()
+															}}</div>
+														</div>
+
+														<div class="auth1lnkprce">
+															<a href="{{route("showViewCourse",['code'=>$course->course_code])}}" class="cr1fot50">Go to course</a>
+
+														</div>
+													</div>
 												</div>
 											</div>
-										</div>
+										@endforeach
+
+
 									</div>
-									<div class="item">
-										<div class="fcrse_1">
-											<a href="/instructor_dashboard.html#" class="fcrse_img">
-												<img src="/images/courses/img-2.jpg" alt="">
-												<div class="course-overlay"></div>
-											</a>
-											<div class="fcrse_content">
-												<div class="vdtodt">
-													<span class="vdt14">Second 4 days 9 hours</span>
-												</div>
-												<a href="/instructor_dashboard.html#" class="crse14s">The Complete JavaScript Course 2020: Build Real Projects!</a>
-												<div class="allvperf">
-													<div class="crse-perf-left">View</div>
-													<div class="crse-perf-right">175k</div>
-												</div>
-												<div class="allvperf">
-													<div class="crse-perf-left">Purchased</div>
-													<div class="crse-perf-right">1k</div>
-												</div>
-												<div class="allvperf">
-													<div class="crse-perf-left">Total Like</div>
-													<div class="crse-perf-right">85k</div>
-												</div>
-												<div class="auth1lnkprce">
-													<a href="/instructor_dashboard.html#" class="cr1fot50">Go to course analytics</a>
-													<a href="/instructor_dashboard.html#" class="cr1fot50">See comments (915)</a>
-													<a href="/instructor_dashboard.html#" class="cr1fot50">See Reviews (255)</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="item">
-										<div class="fcrse_1">
-											<a href="/instructor_dashboard.html#" class="fcrse_img">
-												<img src="/images/courses/img-3.jpg" alt="">
-												<div class="course-overlay"></div>
-											</a>
-											<div class="fcrse_content">
-												<div class="vdtodt">
-													<span class="vdt14">Third 6 days 11 hours:</span>
-												</div>
-												<a href="/instructor_dashboard.html#" class="crse14s">Beginning C++ Programming - From Beginner to Beyond</a>
-												<div class="allvperf">
-													<div class="crse-perf-left">View</div>
-													<div class="crse-perf-right">17k</div>
-												</div>
-												<div class="allvperf">
-													<div class="crse-perf-left">Purchased</div>
-													<div class="crse-perf-right">25</div>
-												</div>
-												<div class="allvperf">
-													<div class="crse-perf-left">Total Like</div>
-													<div class="crse-perf-right">15k</div>
-												</div>
-												<div class="auth1lnkprce">
-													<a href="/instructor_dashboard.html#" class="cr1fot50">Go to course analytics</a>
-													<a href="/instructor_dashboard.html#" class="cr1fot50">See comments (155)</a>
-													<a href="/instructor_dashboard.html#" class="cr1fot50">See Reviews (15)</a>
-												</div>
-											</div>
-										</div>
-									</div>									
 								</div>
 							</div>
 						</div>
-					</div>					
+
+					@endif
 					<div class="col-xl-4 col-lg-6 col-md-6">
 						<div class="section3125 mt-50">
 							<h4 class="item_title">News</h4>
