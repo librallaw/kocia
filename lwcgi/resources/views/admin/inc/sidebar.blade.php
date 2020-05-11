@@ -26,6 +26,20 @@
                         <span class="menu--label">Create Course</span>
                     </a>
                 </li>
+
+                <li class="menu--item">
+                    <a href="{{route("showCreateNews")}}" class="menu--link" title="Create Course">
+                        <i class='uil uil-plus-circle menu--icon'></i>
+                        <span class="menu--label">Create News</span>
+                    </a>
+                </li>
+                <li class="menu--item">
+                    <a href="{{route("showAllNews")}}" class="menu--link" title="Create Course">
+                        <i class='uil uil-plus-circle menu--icon'></i>
+                        <span class="menu--label">News</span>
+                    </a>
+                </li>
+
                 <li class="menu--item">
                     <a href="/instructor_messages.html" class="menu--link" title="Messages">
                         <i class='uil uil-comments menu--icon'></i>

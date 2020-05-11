@@ -37,7 +37,7 @@ class CourseController extends Controller
 
         ]);
 
-        $course = new Course();
+        $course = new N();
 
 
         $unique_code = $messenger->randomId(4,'unique_code','courses');
@@ -61,7 +61,9 @@ class CourseController extends Controller
         $course->save();
 
 
-        return redirect()->back()->with("message","Course successfully created")->with("type","Success");
+        return redirect()->to(route("showViewCourse",['code'=>$course->course_code]))->with("message","Course successfully created")
+            ->with
+        ("type","Success");
 
     }
 

@@ -33,12 +33,37 @@ Route::group(['prefix'=>'admin'],function (){
 
     });
 
-
     Route::group(['prefix'=>'lecture'],function (){
 
         Route::post("create","ADMIN\LectureController@doCreateLecture")->name("doCreateLecture");
 
 
     });
+
+    Route::group(['prefix'=>'quiz'],function (){
+
+        Route::get("create","ADMIN\QuizController@showCreateQuiz")->name("showCreateQuiz");
+        Route::post("create","ADMIN\QuizController@doCreateQuiz")->name("doCreateQuiz");
+
+
+    });
+
+
+    Route::group(['prefix'=>'news'],function (){
+
+        Route::get("/","ADMIN\NewsController@showAllNews")->name("showAllNewsHome");
+        Route::get("all","ADMIN\NewsController@showAllNews")->name("showAllNews");
+
+        Route::get("create","ADMIN\NewsController@showCreateNews")->name("showCreateNews");
+        Route::post("create","ADMIN\NewsController@doCreateNews")->name("doCreateNews");
+
+        Route::post("edit","ADMIN\NewsController@doEditNews")->name("doEditNews");
+
+        Route::get("view/{code}","ADMIN\NewsController@showViewnews")->name("showViewNews");
+
+    });
+
+
+
 
 });

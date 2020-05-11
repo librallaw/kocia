@@ -311,12 +311,16 @@
 															</div>
 															<select class="ui hj145 dropdown cntry152 prompt
 															srch_explore" name="category" required>
-																<option selected value="{{$course->category}}">Previous
-																	Category</option>
+																<option selected
+																		value="{{$course->category->id}}">{{$course
+																		->category->name}}
+																	</option>
+
 																@foreach($categories as $category)
 																	<option value="{{$category->id}}">{{$category->name
 																	}}</option>
 																@endforeach
+
 															</select>
 														</div>
 

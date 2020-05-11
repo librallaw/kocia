@@ -10,7 +10,7 @@
 		<title>Dashboard - LWCGI</title>
 		
 		<!-- Favicon Icon -->
-		<link rel="icon" type="image/png" href="images/favicon.png">
+		<link rel="icon" type="image/png" href="/images/favicon.png">
 		
 		<!-- Stylesheets -->
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet'>
@@ -161,110 +161,92 @@
 						</div>
 
 					@endif
-					<div class="col-xl-4 col-lg-6 col-md-6">
-						<div class="section3125 mt-50">
-							<h4 class="item_title">News</h4>
-							<div class="la5lo1">
-								<div class="owl-carousel edututs_news owl-theme">
-									<div class="item">
-										<div class="fcrse_1">
-											<a href="/instructor_dashboard.html#" class="fcrse_img">
-												<img src="/images/courses/news-1.jpg" alt="">												
-											</a>
-											<div class="fcrse_content">
-												<a href="/instructor_dashboard.html#" class="crsedt145 mt-15">COVID-19 Updates & Resources</a>
-												<p class="news_des45">See the latest updates to coronavirus-related content, including changes to monetization, and access new Creator support resources</p>
-												<div class="auth1lnkprce">
-													<a href="/instructor_dashboard.html#" class="cr1fot50">Learn More</a>
+
+					@if(count($courses) > 0)
+							<div class="col-xl-4 col-lg-6 col-md-6">
+								<div class="section3125 mt-50">
+									<h4 class="item_title">News</h4>
+									<div class="la5lo1">
+										<div class="owl-carousel edututs_news owl-theme">
+											@foreach($news->take(3) as $new)
+												<div class="item">
+													<div class="fcrse_1">
+														<a href="{{route("showViewNews",['code'=>$new->news_code])}}"
+														   class="fcrse_img">
+															<img src="{{ !empty($new->cover)? "/".$new->cover: "/images/courses/add_img.jpg"}}" alt="">
+														</a>
+														<div class="fcrse_content">
+															<a href="{{route("showViewNews",
+															['code'=>$new->news_code])}}" class="crsedt145
+															mt-15">{{$new->title}}</a>
+															<p class="news_des45">{{str_limit(strip_tags
+															($new->content)),100}}</p>
+															<div class="auth1lnkprce">
+																<a href="{{route("showViewNews",['code'=>$new->news_code])}}" class="cr1fot50">Learn More</a>
+															</div>
+														</div>
+													</div>
 												</div>
-											</div>
-										</div>
-									</div>
-									<div class="item">
-										<div class="fcrse_1">
-											<a href="/instructor_dashboard.html#" class="fcrse_img">
-												<img src="/images/courses/news-2.jpg" alt="">												
-											</a>
-											<div class="fcrse_content">
-												<a href="/instructor_dashboard.html#" class="crsedt145 mt-15">Watch: Edututs+ interview Mr. Joginder</a>
-												<p class="news_des45">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac eleifend ante. Duis ac pulvinar felis. Sed a nibh ligula. Mauris eget tortor id mauris tristique accumsan.</p>
-												<div class="auth1lnkprce">
-													<a href="/instructor_dashboard.html#" class="cr1fot50">Watch Now</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="item">
-										<div class="fcrse_1">
-											<a href="/instructor_dashboard.html#" class="fcrse_img">
-												<img src="/images/courses/news-1.jpg" alt="">												
-											</a>
-											<div class="fcrse_content">
-												<a href="/instructor_dashboard.html#" class="crsedt145 mt-15">COVID-19 Updates - April 7</a>
-												<p class="news_des45">Ut porttitor mi vel orci cursus, nec elementum neque malesuada. Phasellus imperdiet quam gravida pharetra aliquet. Integer vel ligula eget nisl dignissim hendrerit.</p>
-												<div class="auth1lnkprce">
-													<a href="/instructor_dashboard.html#" class="cr1fot50">Learn More</a>
-												</div>
-											</div>
+											@endforeach
+
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>						
-					</div>
+						@endif
 					<div class="col-xl-4 col-lg-6 col-md-6">
-						<div class="section3125 mt-50">
-							<h4 class="item_title">Profile Analytics</h4>
-							<div class="la5lo1">	
-								<div class="fcrse_1">
-									<div class="fcrse_content">
-										<h6 class="crsedt8145">Current subscribers</h6>
-										<h3 class="subcribe_title">856</h3>
-										<div class="allvperf">
-											<div class="crse-perf-left">View</div>
-											<div class="crse-perf-right">17k<span class="analyics_pr"><i class="uil uil-arrow-to-bottom"></i>75%</span></div>
-										</div>
-										<div class="allvperf">
-											<div class="crse-perf-left">Purchased<span class="per_text">(per hour)</span></div>
-											<div class="crse-perf-right">1<span class="analyics_pr"><i class="uil uil-top-arrow-from-top"></i>100%</span></div>
-										</div>
-										<div class="allvperf">
-											<div class="crse-perf-left">Enroll<span class="per_text">(per hour)</span></div>
-											<div class="crse-perf-right">50<span class="analyics_pr"><i class="uil uil-top-arrow-from-top"></i>70%</span></div>
-										</div> 
-										<div class="auth1lnkprce">
-											<a href="/instructor_dashboard.html#" class="cr1fot50">Go to profile analytics</a>
-										</div>
-									</div>
-								</div>	
-							</div>
-						</div>
-						<div class="section3125 mt-50">
-							<h4 class="item_title">Submit Courses</h4>
-							<div class="la5lo1">	
-								<div class="fcrse_1">
-									<div class="fcrse_content">
-										<div class="upcming_card">
-											<a href="/instructor_dashboard.html#" class="crsedt145">The Complete JavaScript Course 2020: Build Real Projects!<span class="pndng_145">Pending</span></a>
-											<p class="submit-course">Submitted<span>1 days ago</span></p>
-											<a href="/instructor_dashboard.html#" class="delete_link10">Delete</a>
-										</div>
-									</div>
-								</div>	
-							</div>
-						</div>
-						<div class="section3125 mt-50">
-							<h4 class="item_title">What's new in Edututs+</h4>
-							<div class="la5lo1">	
-								<div class="fcrse_1">
-									<div class="fcrse_content">
-										<a href="/instructor_dashboard.html#" class="new_links10">Improved performance on Studio Dashboard</a>
-										<a href="/instructor_dashboard.html#" class="new_links10">See more Dashboard updates</a>
-										<a href="/instructor_dashboard.html#" class="new_links10">See issues-at-glance for Live</a>
-									</div>
-								</div>	
-							</div>
-						</div>
+						{{--<div class="section3125 mt-50">--}}
+							{{--<h4 class="item_title">Profile Analytics</h4>--}}
+							{{--<div class="la5lo1">	--}}
+								{{--<div class="fcrse_1">--}}
+									{{--<div class="fcrse_content">--}}
+										{{--<h6 class="crsedt8145">Current subscribers</h6>--}}
+										{{--<h3 class="subcribe_title">856</h3>--}}
+										{{--<div class="allvperf">--}}
+											{{--<div class="crse-perf-left">View</div>--}}
+											{{--<div class="crse-perf-right">17k<span class="analyics_pr"><i class="uil uil-arrow-to-bottom"></i>75%</span></div>--}}
+										{{--</div>--}}
+										{{--<div class="allvperf">--}}
+											{{--<div class="crse-perf-left">Purchased<span class="per_text">(per hour)</span></div>--}}
+											{{--<div class="crse-perf-right">1<span class="analyics_pr"><i class="uil uil-top-arrow-from-top"></i>100%</span></div>--}}
+										{{--</div>--}}
+										{{--<div class="allvperf">--}}
+											{{--<div class="crse-perf-left">Enroll<span class="per_text">(per hour)</span></div>--}}
+											{{--<div class="crse-perf-right">50<span class="analyics_pr"><i class="uil uil-top-arrow-from-top"></i>70%</span></div>--}}
+										{{--</div> --}}
+										{{--<div class="auth1lnkprce">--}}
+											{{--<a href="/instructor_dashboard.html#" class="cr1fot50">Go to profile analytics</a>--}}
+										{{--</div>--}}
+									{{--</div>--}}
+								{{--</div>	--}}
+							{{--</div>--}}
+						{{--</div>--}}
+						{{--<div class="section3125 mt-50">--}}
+							{{--<h4 class="item_title">Submit Courses</h4>--}}
+							{{--<div class="la5lo1">	--}}
+								{{--<div class="fcrse_1">--}}
+									{{--<div class="fcrse_content">--}}
+										{{--<div class="upcming_card">--}}
+											{{--<a href="/instructor_dashboard.html#" class="crsedt145">The Complete JavaScript Course 2020: Build Real Projects!<span class="pndng_145">Pending</span></a>--}}
+											{{--<p class="submit-course">Submitted<span>1 days ago</span></p>--}}
+											{{--<a href="/instructor_dashboard.html#" class="delete_link10">Delete</a>--}}
+										{{--</div>--}}
+									{{--</div>--}}
+								{{--</div>	--}}
+							{{--</div>--}}
+						{{--</div>--}}
+						{{--<div class="section3125 mt-50">--}}
+							{{--<h4 class="item_title">What's new in Edututs+</h4>--}}
+							{{--<div class="la5lo1">	--}}
+								{{--<div class="fcrse_1">--}}
+									{{--<div class="fcrse_content">--}}
+										{{--<a href="/instructor_dashboard.html#" class="new_links10">Improved performance on Studio Dashboard</a>--}}
+										{{--<a href="/instructor_dashboard.html#" class="new_links10">See more Dashboard updates</a>--}}
+										{{--<a href="/instructor_dashboard.html#" class="new_links10">See issues-at-glance for Live</a>--}}
+									{{--</div>--}}
+								{{--</div>	--}}
+							{{--</div>--}}
+						{{--</div>--}}
 					</div>
 				</div>
 			</div>
