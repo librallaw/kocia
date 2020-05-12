@@ -1,0 +1,17 @@
+{
+  "name": "lwcgi",
+  "description": "",
+  "main": "",
+  "authors": [
+    "librallaw <liballaw@yahoo.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/librallaw/lwcgi",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

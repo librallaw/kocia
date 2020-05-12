@@ -63,7 +63,7 @@ class CourseController extends Controller
 
         return redirect()->to(route("showViewCourse",['code'=>$course->course_code]))->with("message","Course successfully created")
             ->with
-        ("type","Success");
+        ("type","success");
 
     }
 
@@ -110,7 +110,7 @@ class CourseController extends Controller
         $course->save();
 
 
-        return redirect()->back()->with("message","Course successfully Updated")->with("type","Success");
+        return redirect()->back()->with("message","Course successfully Updated")->with("type","success");
 
     }
 }

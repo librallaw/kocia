@@ -40,6 +40,48 @@
                     </a>
                 </li>
 
+
+
+
+                <li class="menu--item">
+                    <a href="{{route("showCreateQuiz")}}" class="menu--link" title="Create Course">
+                        <i class='uil uil-plus-circle menu--icon'></i>
+                        <span class="menu--label">Create Quiz</span>
+                    </a>
+                </li>
+
+
+                <li class="menu--item">
+                    <a href="{{route("showAllQuiz")}}" class="menu--link" title="Create Course">
+                        <i class='uil uil-plus-circle menu--icon'></i>
+                        <span class="menu--label">Quizzes</span>
+                    </a>
+                </li>
+
+
+
+                <li class="menu--item">
+                    <a href="{{route("showCreateEvent")}}" class="menu--link" title="Create Course">
+                        <i class='uil uil-plus-circle menu--icon'></i>
+                        <span class="menu--label">Create Event</span>
+                    </a>
+                </li>
+
+
+                <li class="menu--item">
+                    <a href="{{route("showAllEvent")}}" class="menu--link" title="Create Course">
+                        <i class='uil uil-plus-circle menu--icon'></i>
+                        <span class="menu--label">Events</span>
+                    </a>
+                </li>
+
+
+
+
+
+
+
+
                 <li class="menu--item">
                     <a href="/instructor_messages.html" class="menu--link" title="Messages">
                         <i class='uil uil-comments menu--icon'></i>

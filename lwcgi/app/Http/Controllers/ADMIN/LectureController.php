@@ -37,7 +37,7 @@ class LectureController extends Controller
 
         $lecture->save();
 
-        return redirect()->back()->with("message","Lecture successfully Added")->with("type","Success");
+        return redirect()->back()->with("message","Lecture successfully Added")->with("type","success");
 
     }
 }

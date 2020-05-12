@@ -36,7 +36,7 @@ class NewsController extends Controller
 
         $news = new News();
 
-        $unique_code = $messenger->randomId(4,'unique_code','courses');
+        $unique_code = $messenger->randomId(4,'news_code','news');
 
         $directory = "news";
 
@@ -54,7 +54,7 @@ class NewsController extends Controller
         $news->save();
 
 
-        return redirect()->back()->with("message","News successfully created")->with("type","Success");
+        return redirect()->back()->with("message","News successfully created")->with("type","success");
 
     }
 
@@ -96,7 +96,7 @@ class NewsController extends Controller
         $news->save();
 
 
-        return redirect()->back()->with("message","News successfully Updated")->with("type","Success");
+        return redirect()->back()->with("message","News successfully Updated")->with("type","success");
 
     }
 

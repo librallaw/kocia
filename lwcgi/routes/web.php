@@ -37,14 +37,33 @@ Route::group(['prefix'=>'admin'],function (){
 
         Route::post("create","ADMIN\LectureController@doCreateLecture")->name("doCreateLecture");
 
-
     });
 
     Route::group(['prefix'=>'quiz'],function (){
 
+        Route::get("all","ADMIN\QuizController@showAllQuiz")->name("showAllQuiz");
+
         Route::get("create","ADMIN\QuizController@showCreateQuiz")->name("showCreateQuiz");
         Route::post("create","ADMIN\QuizController@doCreateQuiz")->name("doCreateQuiz");
 
+        Route::get("view/{code}","ADMIN\QuizController@showViewQuiz")->name("showViewQuiz");
+
+        Route::post("edit","ADMIN\QuizController@doEditQuiz")->name("doEditQuiz");
+        Route::post("edit/title","ADMIN\QuizController@doEditQuizTitle")->name("doEditQuizTitle");
+
+    });
+
+
+    Route::group(['prefix'=>'event'],function (){
+
+        Route::get("all","ADMIN\LiveEventController@showAllEvent")->name("showAllEvent");
+
+        Route::get("create","ADMIN\LiveEventController@showCreateEvent")->name("showCreateEvent");
+        Route::post("create","ADMIN\LiveEventController@doCreateEvent")->name("doCreateEvent");
+
+        Route::get("view/{code}","ADMIN\LiveEventController@showViewEvent")->name("showViewEvent");
+
+        Route::post("edit","ADMIN\LiveEventController@doEditEvent")->name("doEditEvent");
 
     });
 
