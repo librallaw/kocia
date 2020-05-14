@@ -48,9 +48,19 @@ class LiveEventController extends Controller
 
         }
 
+
+
         $event_code = "LW-".$messenger->randomId('4','event_code','live_events')."-EV" ;
+        $directory = "events";
 
         $event = new Live_event();
+
+        if($request->has('cover')){
+            $name = time().".".$request->cover->getClientOriginalExtension();
+            $request->cover->move("courses",$name);
+            $event->cover  =$directory."/".$name;
+        }
+
         $event -> title       = $request -> title;
         $event -> link       = $request -> link;
         $event -> start_time  = strtotime($request -> start_time);
@@ -74,6 +84,14 @@ class LiveEventController extends Controller
         ]);
 
         $event = Live_event::where("event_code",$request->event_code) -> first();
+
+        $directory = "events";
+
+        if($request->has('cover')){
+            $name = time().".".$request->cover->getClientOriginalExtension();
+            $request->cover->move("courses",$name);
+            $event->cover  =$directory."/".$name;
+        }
 
         $event -> title       = $request -> title;
         $event -> start_time  = $request -> start_time;

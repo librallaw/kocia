@@ -37,7 +37,7 @@ class CourseController extends Controller
 
         ]);
 
-        $course = new N();
+        $course = new Course();
 
 
         $unique_code = $messenger->randomId(4,'unique_code','courses');

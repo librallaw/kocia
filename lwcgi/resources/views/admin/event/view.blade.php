@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, shrink-to-fit=9">
 	<meta name="description" content="Gambolthemes">
 	<meta name="author" content="Gambolthemes">
-	<title>{{$quiz->title}} - LWCGI</title>
+	<title>{{$event->title}} - LWCGI</title>
 
 	<!-- Favicon Icon -->
 	<link rel="icon" type="image/png" href="/images/favicon.png">
@@ -46,75 +46,45 @@
 			@include("alert")
 			<div class="row">
 				<div class="col-lg-12">
-					<h2 class="st_title">{{$quiz->title}} ({{$quiz->quiz_code}})</h2>
-					<small class="">{{$quiz->title}} ({{$quiz->quiz_code}})</small>
+					<h2 class="st_title">{{$event->title}} ({{$event->event_code}})</h2>
+					<small class="">{{$event->title}} ({{$event->event_code}})</small>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-4">
 					<div class="earning_steps">
-						<p>Total Questions:</p>
-						<h2>{{$quiz->questions->count()}}</h2>
+						<p>Total Attendees:</p>
+						<h2>100</h2>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="earning_steps">
-						<p>Total Enrolled:</p>
+						<p>Total Comments:</p>
 						<h2>1146</h2>
 					</div>
 				</div>
+				</div>
+
+			<div class="row">
+
 				<div class="col-md-4">
-					<div class="earning_steps">
-						<p>Total Participants:</p>
-						<h2>95895</h2>
-					</div>
-				</div>
 
-				<div class="col-md-6">
-					<div class="mt-50">
-
-						<form class="step-contents col-md-12 card card-body" action="{{route("doEditQuizTitle")}}" method="post"
-							  id="question_form">
-							@csrf
-							<input type="hidden" value="{{$quiz->quiz_code}}" name="quiz_code">
-							<div class="step-tab-panel step-tab-info active" id="tab_step1">
-								<div class="tab-from-content">
-
-									<div class="course__form">
-										<div class="general_info10">
-											<div class="row">
-												<div class="col-md-12">
-													<div class="ui search focus mt-30 lbel25">
-														<label>Title*</label>
-														<div class="ui left icon input swdh19">
-															<input class="prompt srch_explore" type="text"
-																   placeholder="Insert your course title."
-																   name="title"  id="question" maxlength="100"
-																   value="{{$quiz->title}}" required>
-
-														</div>
-													</div>
-												</div>
-
-
-
-
-
-											</div>
-										</div>
-
-									</div>
-								</div>
+						<div class="top_countries mt-50">
+							<div class="top_countries_title">
+								<h2>Course Image</h2>
 							</div>
-							<br />
-							<br />
-							<div class=" col-md-6">
-								<button type="submit" class="btn btn-default steps_btn" id="">Update
-									Title
-								</button>
+							<div class="country_list">
+
+								<img src="{{ !empty($course->cover)? "/".$course->cover: "/images/courses/add_img
+								.jpg"}}" style="width:100%" />
+
 							</div>
-						</form>
-					</div>
+						</div>
+
+
+
+						<button class="upload_btn" data-toggle="modal" data-target="#edit_course_Modal" style="margin-top:10px;">Edit
+							Course</button>
 
 
 
@@ -126,18 +96,15 @@
 
 
 				<div class="col-md-6">
-					<div class="mt-50" style="max-height: 800px;overflow: scroll;overflow-x: hidden;">
+					<div class="mt-50" style="">
 
-					@if(count($quiz->questions) > 0)
-						<?php $x = 1; ?>
 
-								@foreach($quiz->questions as $question)
-									<form class="step-contents col-md-12 card card-body" action="{{route("doEditQuiz")}}"
+									<form class="step-contents col-md-12 card card-body" action="{{route
+									("doEditEvent")}}"
 										  method="post"
 										  id="question_form">
-										<input type="hidden" value="{{$quiz->quiz_code}}" name="quiz_code">
-										<input type="hidden" value="{{$question->question_code}}"
-											   name="question_code">
+										<input type="hidden" value="{{$event->event_code}}" name="event_code">
+
 										@csrf
 										<div class="step-tab-panel step-tab-info active" id="tab_step1">
 											<div class="tab-from-content">
@@ -147,13 +114,13 @@
 														<div class="row">
 															<div class="col-md-12">
 																<div class="ui search focus mt-30 lbel25">
-																	<label>Question {{$x++}}</label>
+																	<label>Question /label>
 																	<div class="ui left icon input swdh19">
 																		<input class="prompt srch_explore" type="text"
 																			   placeholder="Insert your course title."
 																			   name="question"  id="question"
 																			   maxlength="100"
-																			   value="{{$question->question}}" required>
+																			   value="{{$event->question}}" required>
 
 																	</div>
 																</div>
@@ -163,7 +130,7 @@
 																<div class="ui search focus mt-30 lbel25">
 																	<label>opt1*</label>
 																	<div class="ui left icon input swdh19">
-																		<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="opt1" id="op1" maxlength="100"  value="{{$question->opt1}}" required>
+																		<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="opt1" id="op1" maxlength="100"  value="{{$event->start_time}}" required>
 
 																	</div>
 																</div>
@@ -173,27 +140,7 @@
 																<div class="ui search focus mt-30 lbel25">
 																	<label>opt2*</label>
 																	<div class="ui left icon input swdh19">
-																		<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="opt2"  id="op2" maxlength="100"  value="{{$question->opt2}}" required>
-
-																	</div>
-																</div>
-															</div>
-
-															<div class="col-md-12">
-																<div class="ui search focus mt-30 lbel25">
-																	<label>opt3*</label>
-																	<div class="ui left icon input swdh19">
-																		<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="opt3"  id="op3" maxlength="100"  value="{{$question->opt3}}" required>
-
-																	</div>
-																</div>
-															</div>
-
-															<div class="col-md-12">
-																<div class="ui search focus mt-30 lbel25">
-																	<label>opt4*</label>
-																	<div class="ui left icon input swdh19">
-																		<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="opt4"  id="op4" maxlength="100"  value="{{$question->opt4}}" required>
+																		<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="opt2"  id="op2" maxlength="100"  value="{{$event->link}}" required>
 
 																	</div>
 																</div>
@@ -207,8 +154,7 @@
 																</div>
 																<select class="form-control" name="correct" id="correct_option"
 																		required>
-																	<option selected value="{{$question->correct}}">{{$question
-																	->correct}}</option>
+
 																	<option value="opt1">Opt1 </option>
 																	<option value="opt2">Opt2</option>
 																	<option value="opt3">Opt3</option>
@@ -237,9 +183,7 @@
 									</form>
 							<br />
 							<br />
-								@endforeach
 
-					@endif
 				</div>
 			</div>
 		</div>

@@ -109,6 +109,46 @@
 									</div>
 
 
+									<div class="step-tab-panel step-tab-gallery" id="tab_step2">
+										<div class="tab-from-content">
+											<div class="title-icon">
+												<h3 class="title"><i class="uil uil-image-upload"></i>View</h3>
+											</div>
+											<div class="course__form">
+												<div class="view_info10">
+													<div class="row">
+														<div class="col-lg-12">
+															<div class="view_all_dt">
+																<div class="view_img_left">
+																	<div class="view__img">
+																		<img id="holderimage1" src="/images/courses/add_img.jpg"
+																			 alt="">
+																	</div>
+																</div>
+																<div class="view_img_right">
+																	<h4>Cover Image</h4>
+																	<p>Upload your course image here. It must meet our course image quality standards to be accepted. Important guidelines: 480x270 pixels; .jpg, .jpeg,. gif, or .png. no text on the image.</p>
+																	<div class="upload__input">
+																		<div class="input-group">
+																			<div class="custom-file">
+																				<input onchange="readURL(this)"
+																					   type="file" name="cover"
+																					   class="" id="">
+
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+
 									<br />
 									<br />
 

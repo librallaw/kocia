@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::post("/auth/login","AuthController@doLogin")->name("doLogin");
 
 Route::group(['prefix'=>'admin'],function (){
 
@@ -83,6 +84,37 @@ Route::group(['prefix'=>'admin'],function (){
     });
 
 
+});
+
+
+Route::group(['prefix'=>'user'],function (){
+
+    Route::get("dashboard","USER\DashboardController@showUserDashboard")->name("showUserDashboard");
+    Route::get("/","USER\DashboardController@showUserDashboard");
+
+    Route::group(['prefix'=>'course'],function (){
+
+        Route::get("all","USER\CourseController@showAllUserCourses")->name("showAllUserCourses");
+        Route::get("view/{code}","USER\CourseController@showViewUserCourse")->name("showViewUserCourse");
+        Route::get("/lecture/watch/{code}","USER\CourseController@showCourseVideo")->name("showCourseVideo");
+    });
+
+
+    Route::group(['prefix'=>'quiz'],function (){
+
+        Route::get("all","USER\QuizController@showAllUserQuiz")->name("showAllUserQuiz");
+        Route::get("view/{code}","USER\QuizController@showViewUserQuiz")->name("showViewUserQuiz");
+        Route::post("submit","USER\QuizController@markQuiz")->name("markQuiz");
+        Route::get("score/{code}","USER\QuizController@showQuizScore")->name("showQuizScore");
+
+    });
+
+
 
 
 });
+
+Auth::routes();
+
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -24,12 +24,11 @@ class NewsController extends Controller
         return view("admin.news.create",$data);
     }
 
-
     public function doCreateNews(Request $request,Messenger $messenger)
     {
         $request -> validate([
-            'title' => "required",
-            'category' => "required",
+            'title'        => "required",
+            'category'     => "required",
             'news_content' => "required",
 
         ]);
@@ -42,30 +41,28 @@ class NewsController extends Controller
 
         if($request->has('cover')){
             $name = time().".".$request->cover->getClientOriginalExtension();
-            $request->cover->move("news",$name);
-            $news->cover  =$directory."/".$name;
+
+            $request -> cover -> move("news",$name);
+            $news    -> cover = $directory."/".$name;
         }
 
-        $news->title  = $request->title;
-        $news->category_id  = $request->category;
-        $news->content  = $request->news_content;
-        $news->news_code  = "LW-".$unique_code."-NS";
+        $news -> title        = $request->title;
+        $news -> category_id  = $request->category;
+        $news -> content      = $request->news_content;
+        $news -> news_code    = "LW-".$unique_code."-NS";
 
         $news->save();
 
-
-        return redirect()->back()->with("message","News successfully created")->with("type","success");
+        return redirect() -> back() ->with("message","News successfully created")->with("type","success");
 
     }
-
 
     public function showViewNews($code)
     {
         $data['categories'] = News_category::all();
-        $data['news'] = News::where("news_code",$code)->first();
+        $data['news']       = News::where("news_code",$code) -> first();
         return view("admin.news.viewnews",$data);
     }
-
 
     public function doEditNews(Request $request)
     {
@@ -77,26 +74,25 @@ class NewsController extends Controller
 
         ]);
 
-        $news = News::where("news_code",$request->news_code)->first();
-
+        $news = News::where("news_code",$request -> news_code)->first();
 
         $directory = "news";
 
         if($request->has('cover')){
-            $name = time().".".$request->cover->getClientOriginalExtension();
-            $request->cover->move("news",$name);
-            $news->cover  =$directory."/".$name;
+            $name    = time().".".$request -> cover -> getClientOriginalExtension();
+            $request ->cover -> move("news",$name);
+            $news    ->cover  = $directory."/".$name;
         }
 
 
-        $news->title  = $request->title;
-        $news->category_id  = $request->category;
-        $news->content  = $request->news_content;
+        $news -> title        = $request->title;
+        $news -> category_id  = $request->category;
+        $news -> content      = $request->news_content;
 
-        $news->save();
+        $news -> save();
 
 
-        return redirect()->back()->with("message","News successfully Updated")->with("type","success");
+        return redirect() -> back() -> with("message","News successfully Updated")->with("type","success");
 
     }
 

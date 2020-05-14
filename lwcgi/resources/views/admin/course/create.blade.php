@@ -77,9 +77,9 @@
 															<div class="ui search focus mt-30 lbel25">
 																<label>Course Subtitle*</label>
 																<div class="ui left icon input swdh19">
-																	<input class="prompt srch_explore" type="text" placeholder="Insert your course Subtitle." name="subtitle" data-purpose="edit-course-title" maxlength="60" id="sub[title]" value="{{old
+																	<input class="prompt srch_explore" type="text" placeholder="Insert your course Subtitle." name="subtitle" data-purpose="edit-course-title" maxlength="150" id="sub[title]" value="{{old
 																	("subtitle")}}" required>
-																	<div class="badge_num2">120</div>
+																	<div class="badge_num2">150</div>
 																</div>
 															</div>
 														</div>
@@ -166,7 +166,7 @@
 																</div>
 																<div class="view_img_right">
 																	<h4>Cover Image</h4>
-																	<p>Upload your course image here. It must meet our course image quality standards to be accepted. Important guidelines: 750x422 pixels; .jpg, .jpeg,. gif, or .png. no text on the image.</p>
+																	<p>Upload your course image here. It must meet our course image quality standards to be accepted. Important guidelines: 480x270 pixels; .jpg, .jpeg,. gif, or .png. no text on the image.</p>
 																	<div class="upload__input">
 																		<div class="input-group">
 																			<div class="custom-file">
