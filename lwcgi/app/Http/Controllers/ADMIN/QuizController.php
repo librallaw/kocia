@@ -26,7 +26,7 @@ class QuizController extends Controller
 
     public function showCreateQuiz()
     {
-        return view("admin.quiz.create");
+        return view("admin.quiz.create2");
     }
 
     public function doCreateQuiz(Request $request,Messenger $messenger)

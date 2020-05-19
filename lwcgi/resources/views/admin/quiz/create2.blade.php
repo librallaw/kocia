@@ -76,6 +76,7 @@
 											<div class="course__form">
 												<div class="general_info10">
 													<div class="row">
+
 														<div class="col-md-12">
 															<div class="ui search focus mt-30 lbel25">
 																<label>Question*</label>
@@ -84,47 +85,21 @@
 																	<div class="badge_num">100</div>
 																</div>
 															</div>
+
+														</div>
+														<div id="options_holder" class="col-md-12">
+
+
 														</div>
 
-														<div class="col-md-12">
-															<div class="ui search focus mt-30 lbel25">
-																<label>opt1*</label>
-																<div class="ui left icon input swdh19">
-																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title" id="op1" maxlength="100"  value="" required>
-																	<div class="badge_num">100</div>
-																</div>
-															</div>
+
+
+														<div class="col-md-12" style="margin-top: 10px;">
+															<button id="add_option_button" class="btn btn-default steps_btn"  onclick="addOption(this)">Add option</button>
 														</div>
 
-														<div class="col-md-12">
-															<div class="ui search focus mt-30 lbel25">
-																<label>opt2*</label>
-																<div class="ui left icon input swdh19">
-																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title"  id="op2" maxlength="100"  value="" required>
-																	<div class="badge_num">100</div>
-																</div>
-															</div>
-														</div>
 
-														<div class="col-md-12">
-															<div class="ui search focus mt-30 lbel25">
-																<label>opt3*</label>
-																<div class="ui left icon input swdh19">
-																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title"  id="op3" maxlength="100"  value="" required>
-																	<div class="badge_num">100</div>
-																</div>
-															</div>
-														</div>
 
-														<div class="col-md-12">
-															<div class="ui search focus mt-30 lbel25">
-																<label>opt4*</label>
-																<div class="ui left icon input swdh19">
-																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title"  id="op4" maxlength="100"  value="" required>
-																	<div class="badge_num">100</div>
-																</div>
-															</div>
-														</div>
 
 
 
@@ -231,6 +206,28 @@
 		});
 	</script>
 
+	<script>
+
+        var questionHolder =  {};
+
+		function addOption(data){
+
+			$("#options_holder").append(
+			    `<div class="col-md-12">
+					<div class="ui search focus mt-30 lbel25">
+							<label>opt4*</label>
+							<div class="ui left icon input swdh19">
+							    <input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="options"  id="op4" maxlength="100"  value="" required>
+								<div class="badge_num">100</div>
+							</div>
+					</div>
+				</div>
+				`
+			)
+		}
+
+	</script>
+
 <script>
     function readURL(input) {
         if (input.files && input.files[0]) {
@@ -250,157 +247,185 @@
 <script>
     var questionHolder =  {};
     var counting = 0;
+    var empty = 0
 
 	$("#submit_btn").click(function (e){
 
-	    e.preventDefault();
+        e.preventDefault();
 
-        var question = $("#question").val();
-        var op1 = $("#op1").val();
-        var op2 = $("#op2").val();
-        var op3 = $("#op3").val();
-        var op4 = $("#op4").val();
+        var elements = document.getElementById("question_form").elements;
 
-        var correct_option = $("#correct_option").val();
-
-	    if(question != "" && op1 != "" && op2 != "" && op3 != "" && op4 != "" && correct_option != ""){
-
-	        var count = Object.keys(questionHolder).length;
-
-	        var newkey = "question"+counting;
-
-            questionHolder[newkey] ={question:question, op1:op1, op2:op2, op3:op3, op4:op4,correct:correct_option};
-			counting = counting + 1;
-
-			var preview = `<div class="course__form" style="margin-top:0px" id="${newkey}-question-holder">
-												<div class="general_info10">
-													<div class="row">
-														<div class="col-md-12">
-															<br />
-															<br />
-															<button class="btn btn-danger" onclick="deleteReview(this)"
-																	question_id="${newkey}"  >x Remove</button>
-															<br />
-															<br />
-														</div>
-														<h2>Question ${counting}</h2>
-
-														<div class="col-md-12">
-															<div class="ui search focus mt-30 lbel25">
-																<label>Question*</label>
-																<div class="ui left icon input swdh19">
-																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title"  id="${newkey}-question" maxlength="100"  value="${question}" required>
-																	<div class="badge_num">100</div>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-12">
-															<div class="ui search focus mt-30 lbel25">
-																<label>opt1*</label>
-																<div class="ui left icon input swdh19">
-																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title" id="${newkey}-op1" maxlength="100" value="${op1}" required>
-																	<div class="badge_num">100</div>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-12">
-															<div class="ui search focus mt-30 lbel25">
-																<label>opt2*</label>
-																<div class="ui left icon input swdh19">
-																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title"  id="${newkey}-op2" maxlength="100"  value="${op2}" required>
-																	<div class="badge_num">100</div>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-12">
-															<div class="ui search focus mt-30 lbel25">
-																<label>opt3*</label>
-																<div class="ui left icon input swdh19">
-																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title"  id="${newkey}-op3" maxlength="100" value="${op3}" required>
-																	<div class="badge_num">100</div>
-																</div>
-															</div>
-														</div>
-
-														<div class="col-md-12">
-															<div class="ui search focus mt-30 lbel25">
-																<label>opt4*</label>
-																<div class="ui left icon input swdh19">
-																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title"  id="${newkey}-op4" maxlength="100" value="${op4}" required>
-																	<div class="badge_num">100</div>
-																</div>
-															</div>
-														</div>
+        for (var i = 0, element; element = elements[i++];) {
+            if (element.name === "options" && element.value === "")
+               // console.log("An field empty textfield")
+                empty ++;
+        }
 
 
+        if(empty > 0){
 
-														<div class="col-md-6">
-															<div class="mt-30 lbel25">
-																<label>Select Correct Answer</label>
-															</div>
-															<select class="ui hj145 dropdown cntry152 prompt
-															srch_explore" name="correct" id="${newkey}-correct_option" required>
-																<option selected
-																		value="${correct_option}">${correct_option}</option>
-																<option value="opt1">Opt1 </option>
-																<option value="opt2">Opt2</option>
-																<option value="opt3">Opt3</option>
-																<option value="opt4">Opt4</option>
-
-															</select>
-														</div>
-														<br />
-
-
-
-													</div>
-												</div>
-												<br />
-												<br />
-												<div class=" col-md-12 clearfix">
-
-
-													<button class="btn btn-warning edit_button_review" question_id="${newkey}"
-															id="edit_button" onclick="editReview(this)"
-															style="color:white">Edit
-														Question</button>
-												</div>
-
-											</div>
-											<br />
-												<br />
-										`;
-
-										$("#preview").append(preview);
-
-										$("#review-tab").show(1000);
-										$("#question_form")[0].reset();
-            							//$("#correct_option").val("");
-//                                        $("#myform").find('input:text, input:password, input:file, select, textarea')
-//											.val('');
-
-
-										$.notify("Question Submitted for review", {
-											className: 'success',
-											autoHide: true,
-										});
-
-
-
-
-
-			//alert(Object.keys(questionHolder).length)
-
-		}else{
-
-            $.notify("All fields are compulsory", {
+            $.notify("You have "+empty+" field(s)", {
                 className: 'error',
                 autoHide: true,
             });
+
+            empty = 0;
 		}
+
+
+
+
+
+
+
+
+//
+//        var question = $("#question").val();
+//        var op1 = $("#op1").val();
+//        var op2 = $("#op2").val();
+//        var op3 = $("#op3").val();
+//        var op4 = $("#op4").val();
+//
+//        var correct_option = $("#correct_option").val();
+//
+//	    if(question != "" && op1 != "" && op2 != "" && op3 != "" && op4 != "" && correct_option != ""){
+//
+//	        var count = Object.keys(questionHolder).length;
+//
+//	        var newkey = "question"+counting;
+//
+//            questionHolder[newkey] ={question:question, op1:op1, op2:op2, op3:op3, op4:op4,correct:correct_option};
+//			counting = counting + 1;
+//
+//			var preview = `<div class="course__form" style="margin-top:0px" id="${newkey}-question-holder">
+//												<div class="general_info10">
+//													<div class="row">
+//														<div class="col-md-12">
+//															<br />
+//															<br />
+//															<button class="btn btn-danger" onclick="deleteReview(this)"
+//																	question_id="${newkey}"  >x Remove</button>
+//															<br />
+//															<br />
+//														</div>
+//														<h2>Question ${counting}</h2>
+//
+//														<div class="col-md-12">
+//															<div class="ui search focus mt-30 lbel25">
+//																<label>Question*</label>
+//																<div class="ui left icon input swdh19">
+//																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title"  id="${newkey}-question" maxlength="100"  value="${question}" required>
+//																	<div class="badge_num">100</div>
+//																</div>
+//															</div>
+//														</div>
+//
+//														<div class="col-md-12">
+//															<div class="ui search focus mt-30 lbel25">
+//																<label>opt1*</label>
+//																<div class="ui left icon input swdh19">
+//																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title" id="${newkey}-op1" maxlength="100" value="${op1}" required>
+//																	<div class="badge_num">100</div>
+//																</div>
+//															</div>
+//														</div>
+//
+//														<div class="col-md-12">
+//															<div class="ui search focus mt-30 lbel25">
+//																<label>opt2*</label>
+//																<div class="ui left icon input swdh19">
+//																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title"  id="${newkey}-op2" maxlength="100"  value="${op2}" required>
+//																	<div class="badge_num">100</div>
+//																</div>
+//															</div>
+//														</div>
+//
+//														<div class="col-md-12">
+//															<div class="ui search focus mt-30 lbel25">
+//																<label>opt3*</label>
+//																<div class="ui left icon input swdh19">
+//																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title"  id="${newkey}-op3" maxlength="100" value="${op3}" required>
+//																	<div class="badge_num">100</div>
+//																</div>
+//															</div>
+//														</div>
+//
+//														<div class="col-md-12">
+//															<div class="ui search focus mt-30 lbel25">
+//																<label>opt4*</label>
+//																<div class="ui left icon input swdh19">
+//																	<input class="prompt srch_explore" type="text" placeholder="Insert your course title." name="title"  id="${newkey}-op4" maxlength="100" value="${op4}" required>
+//																	<div class="badge_num">100</div>
+//																</div>
+//															</div>
+//														</div>
+//
+//
+//
+//														<div class="col-md-6">
+//															<div class="mt-30 lbel25">
+//																<label>Select Correct Answer</label>
+//															</div>
+//															<select class="ui hj145 dropdown cntry152 prompt
+//															srch_explore" name="correct" id="${newkey}-correct_option" required>
+//																<option selected
+//																		value="${correct_option}">${correct_option}</option>
+//																<option value="opt1">Opt1 </option>
+//																<option value="opt2">Opt2</option>
+//																<option value="opt3">Opt3</option>
+//																<option value="opt4">Opt4</option>
+//
+//															</select>
+//														</div>
+//														<br />
+//
+//
+//
+//													</div>
+//												</div>
+//												<br />
+//												<br />
+//												<div class=" col-md-12 clearfix">
+//
+//
+//													<button class="btn btn-warning edit_button_review" question_id="${newkey}"
+//															id="edit_button" onclick="editReview(this)"
+//															style="color:white">Edit
+//														Question</button>
+//												</div>
+//
+//											</div>
+//											<br />
+//												<br />
+//										`;
+//
+//										$("#preview").append(preview);
+//
+//										$("#review-tab").show(1000);
+//										$("#question_form")[0].reset();
+//            							//$("#correct_option").val("");
+////                                        $("#myform").find('input:text, input:password, input:file, select, textarea')
+////											.val('');
+//
+//
+//										$.notify("Question Submitted for review", {
+//											className: 'success',
+//											autoHide: true,
+//										});
+//
+//
+//
+//
+//
+//			//alert(Object.keys(questionHolder).length)
+//
+//		}else{
+//
+//            $.notify("All fields are compulsory", {
+//                className: 'error',
+//                autoHide: true,
+//            });
+//		}
 
 
 
