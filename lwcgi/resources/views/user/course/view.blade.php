@@ -55,7 +55,7 @@
                         <div class="row justify-content-center">
                             <div class="col-xl-4 col-lg-5 col-md-6">
                                 <div class="preview_video">
-                                    <a href="/course_detail_view.html#" class="fcrse_img" data-toggle="modal" data-target="#videoModal">
+                                    <a href="#" class="fcrse_img">
                                         <img src="{{!empty($course->cover)? "/".$course->cover: "/images/courses/add_img.jpg"}}" alt="">
 
                                     </a>

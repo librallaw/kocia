@@ -38,4 +38,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function quizs()
+    {
+        return $this->hasMany(Quiz_report::class,'user_id','id');
+    }
 }

@@ -29,24 +29,17 @@
                 <li class="menu--item  menu--item__has_sub_menu">
                     <label class="menu--link" title="Tests">
                         <i class='uil uil-clipboard-alt menu--icon'></i>
-                        <span class="menu--label">Tests</span>
+                        <span class="menu--label">Quizzes</span>
                     </label>
                     <ul class="sub_menu">
                         <li class="sub_menu--item">
-                            <a href="certification_center.html" class="sub_menu--link">Certification Center</a>
+                            <a href="{{route("showAllUserQuiz")}}" class="sub_menu--link">All Quizzes</a>
                         </li>
+
                         <li class="sub_menu--item">
-                            <a href="certification_start_form.html" class="sub_menu--link">Certification Fill Form</a>
+                            <a href="{{route("showAllUserQuiz")}}" class="sub_menu--link">My Taken Quizzes</a>
                         </li>
-                        <li class="sub_menu--item">
-                            <a href="certification_test_view.html" class="sub_menu--link">Test View</a>
-                        </li>
-                        <li class="sub_menu--item">
-                            <a href="certification_test__result.html" class="sub_menu--link">Test Result</a>
-                        </li>
-                        <li class="sub_menu--item">
-                            <a href="#" class="sub_menu--link">My Certification</a>
-                        </li>
+
                     </ul>
                 </li>
                 <li class="menu--item">

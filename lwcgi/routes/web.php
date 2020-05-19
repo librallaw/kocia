@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::post("/auth/login","AuthController@doLogin")->name("doLogin");
 
-Route::group(['prefix'=>'admin'],function (){
+Route::group(['prefix'=>'admin','middleware'=>"auth"],function (){
 
     Route::get("dashboard","ADMIN\DashboardController@showAdminDashboard")->name("showAdminDashboard");
     Route::get("/","ADMIN\DashboardController@showAdminDashboard");
@@ -87,7 +87,7 @@ Route::group(['prefix'=>'admin'],function (){
 });
 
 
-Route::group(['prefix'=>'user'],function (){
+Route::group(['prefix'=>'user','middleware'=>"auth"],function (){
 
     Route::get("dashboard","USER\DashboardController@showUserDashboard")->name("showUserDashboard");
     Route::get("/","USER\DashboardController@showUserDashboard");
@@ -106,6 +106,7 @@ Route::group(['prefix'=>'user'],function (){
         Route::get("view/{code}","USER\QuizController@showViewUserQuiz")->name("showViewUserQuiz");
         Route::post("submit","USER\QuizController@markQuiz")->name("markQuiz");
         Route::get("score/{code}","USER\QuizController@showQuizScore")->name("showQuizScore");
+        Route::get("review/{code}","USER\QuizController@reviewQuiz")->name("reviewQuiz");
 
     });
 

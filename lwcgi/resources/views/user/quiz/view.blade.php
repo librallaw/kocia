@@ -53,7 +53,10 @@
 	</div>
 	<div class="faq1256">
 		<div class="container">
+
 			<div class="row">
+				@include("alert")
+
 				<div class="col-lg-4 col-md-6">
 					<div class="certi_form rght1528">
 						<div class="test_timer_bg">
@@ -65,12 +68,50 @@
 									</div>
 								</li>
 
+								@if(isset($report))
+									<li>
+										<div class="timer_time">
+											<h4>{{$report->attempt}}</h4>
+											<p>Attempts</p>
+										</div>
+									</li>
+								@endif
+
 							</ul>
+
 						</div>
+
+						@if(isset($report))
+
+							<div class="test_timer_bg">
+								<div class="alert alert-warning" style="text-align: center"> You have previously taken this Quiz and your previous results are displayed below: </div>
+								<ul class="test_timer_left">
+									<li>
+										<div class="timer_time">
+											<h4 style="border: 2px solid green;">{{$report->correct}}</h4>
+											<p>Correct</p>
+										</div>
+									</li>
+									<li>
+										<div class="timer_time">
+											<h4 style="border: 2px solid red;">{{$report->wrong}}</h4>
+											<p>Wrong</p>
+										</div>
+									</li>
+
+								</ul>
+
+							</div>
+
+							<a href="{{route("reviewQuiz",['quiz_code'=>$quiz->quiz_code])}}">
+								<button class="_145d1"><i class="uil uil-question-circle"></i>View Previous Attempt</button>
+							</a>
+
+						@endif
 					</div>
 				</div>
 				<div class="col-lg-7 col-md-6">
-					@include("alert")
+
 					<div class="certi_form card ">
 						<form class="all_ques_lest card-body" action="{{route("markQuiz")}}" method="post">
 							<input type="hidden" value="{{$quiz->quiz_code}}" name="quiz_code" />

@@ -77,12 +77,21 @@
 								</li>
 							</ul>
 							<div class="result_content">
-								<h2>Congratulation! </h2>
+								<h2>Congratulations! </h2>
+								<a href="{{route("reviewQuiz",['quiz_code'=>$report->quiz_code])}}">
+									<button class="_145d1"><i class="uil uil-question-circle"></i>View Attempt</button>
+								</a>
 
 							</div>
 						</div>
 					</div>
+
+
+
 				</div>
+
+
+
 			</div>
 		</div>
 	</div>
