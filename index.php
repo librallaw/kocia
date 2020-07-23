@@ -128,9 +128,7 @@
                                             <li><a href="#">About Us</a>
 
                                             </li>
-                                            <li><a href="#">Contact Us</a>
 
-                                            </li>
                                         </ul>
                                     </nav>
                                 </div><!-- site-navigation end-->
@@ -351,7 +349,7 @@
                         <div class="col-lg-6">
                             <!-- ttm_single_image-wrapper -->
                             <div class="ttm_single_image-wrapper">
-                                <img class="img-fluid" src="images/single-img-two.png" title="single-img-two" alt="single-img-two">
+                                <img class="img-fluid" src="images/slides/100.jpeg" title="single-img-two" alt="">
                             </div><!-- ttm_single_image-wrapper end -->
                         </div>
 
@@ -361,7 +359,8 @@
                                 <div class="section-title with-desc clearfix">
                                     <div class="title-header">
                                         <h5>About Kocia</h5>
-                                        <h2 class="title">We deal with the aspects of professional <span>IT Services</span></h2>
+                                        <h2 class="title">We Are Business
+                                            <span>Enablers</span></h2>
                                     </div>
                                     <div class="title-desc">
                                         <p>We are an IT consulting and solution provider company, that help clients build, support and manage their entire IT infrastructure. Kocia can help lead your organization forward with highly effective IT strategies and implement innovative solutions with our consultancy services.</p>
@@ -570,7 +569,8 @@
                                 </div>
                                 <div class="layer-content">
                                     <div class="spacing-6 ttm-textcolor-white">
-                                        <h3 class="mb-5">We Take Care of Your Technology Focus on Your Business</h3>
+                                        <h3 class="mb-5">We Take Care Of Your Technology While You Focus On Your Core Business
+                                        </h3>
 
                                     </div>
                                 </div>
