@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Altech – IT Sollutions and Services HTML Template" />
+    <meta name="description" content="Kocia – IT Sollutions and Services HTML Template" />
     <meta name="author" content="https://www.themetechmount.com/" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title>Kocia – IT Solutions and Services </title>
@@ -107,7 +107,7 @@
                         <div class="container">
                             <!-- site-branding -->
                             <div class="site-branding">
-                                <a class="home-link" href="index.html" title="Altech" rel="home">
+                                <a class="home-link" href="index.html" title="Kocia" rel="home">
                                     <img id="logo-img" class="img-center lazyload" data-src="images/logo.png" alt="logo">
                                 </a>
                             </div><!-- site-branding end -->
@@ -369,7 +369,7 @@
                             data-frame_0="y:100%;"
                             data-frame_1="st:1080;sp:500;sR:1080;"
                             data-frame_999="o:0;st:w;sR:7420;"
-                    >Get Altech
+                    >Get Kocia
                     </a>
 
                     <rs-layer
@@ -514,32 +514,7 @@
                             </div>
                         </div><!-- section title end -->
                         <!-- row -->
-                        <div class="row no-gutters mt-35">
-                            <div class="col-md-6">
 
-                                <ul class="ttm-list ttm-list-style-icon">
-                                    <li><i class="fa fa-circle-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">ENTERPRISE SECURITY
- </span></li>
-                                    <li><i class="fa fa-circle-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">ENDPOINT SECURITY  </span></li>
-                                    <li><i class="fa fa-circle-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">DATA SECURITY</span></li>
-                                    <li><i class="fa fa-circle-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">APPLICATION SECURITY
-</span></li> <li><i class="fa fa-circle-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">IMPLEMENTATION</span></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-
-                                <ul class="ttm-list ttm-list-style-icon">
-
-                                    <li><i class="fa fa-circle-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">CLOUD SUPPORT</span></li>
-                                    <li><i class="fa fa-circle-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">CLOUD SECURITY</span></li>
-                                    <li><i class="fa fa-circle-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">WEBSITE DEVELOPMENT</span></li>
-                                    <li><i class="fa fa-circle-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">WEB & MOBILE APP DEVELOPMENT</span></li>
-                                    <li><i class="fa fa-circle-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content">INTEGRATION & PROCESS AUTOMATION</span></li>
-                                </ul>
-                            </div>
-
-
-                        </div><!-- row END-->
                         <!-- separator -->
                         <div class="separator">
                             <div class="sep-line mt-25 mb-30"></div>
@@ -610,7 +585,11 @@
                                         Security</h5>
                                 </div><!-- historybox-title  -->
                                 <div class="ttm-historybox-description"><!-- description  -->
-                                   <hr />
+                                    Network and IT Infrastructure been the heart of every business, we work with our customers to design and build a reliable and effective network and information infrastructure (for smooth operation of their business).
+
+                                    <div class="separator">
+                                        <div class="sep-line mt-25 mb-25"></div>
+                                    </div>
                                 </div>
                                 <div class="ttm-historybox-description" align="left"><!-- description  -->
 
@@ -638,12 +617,19 @@
                             <div class="ttm-history-box-border"></div><!-- ttm-history-box-border  -->
                             <div class="ttm-history-box-details">
                                 <div class="ttm-historybox-title"><h5>Enterprise Security</h5></div><!-- historybox-title  -->
-                                <div class="ttm-historybox-description"><!-- description  -->
-                                    <hr />
+                                <div class="ttm-historybox-description">
+                                    By implementing state-of-the-art security solution tailored for your organization we can protect your assets wherever it resides against unauthorized access and risks that may infringe the confidentiality, integrity or availability of these systems.
+
+                                    <!-- description  -->
+                                    <div class="separator">
+                                        <div class="sep-line mt-25 mb-25"></div>
+                                    </div>
 
                                 </div>
 
-                                <div class="ttm-historybox-description" align="left"><!-- description  -->
+                                <div class="ttm-historybox-description" align="left">
+
+                                    <!-- description  -->
 
                                     <div> <i class="fa fa-circle-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content"> NETWORK SECURITY</div>
                                     <div> <i class="fa fa-circle-o ttm-textcolor-skincolor"></i><span class="ttm-list-li-content"> ENDPOINT SECURITY </div>
@@ -669,8 +655,13 @@
                             <div class="ttm-history-box-border"></div><!-- ttm-history-box-border  -->
                             <div class="ttm-history-box-details">
                                 <div class="ttm-historybox-title"><h5>Cloud Services</h5></div><!-- historybox-title  -->
-                                <div class="ttm-historybox-description"><!-- description  -->
-                                    <hr />
+                                <div class="ttm-historybox-description">
+                                    We help our client on their journey to the cloud by providing expertise through consulting/assessing, migration and protecting their assets in the cloud, protecting from data loss making it accesible and secure at all times.
+
+                                    <!-- description  -->
+                                    <div class="separator">
+                                        <div class="sep-line mt-25 mb-25"></div>
+                                    </div>
                                 </div>
 
                                 <div class="ttm-historybox-description" align="left"><!-- description  -->
@@ -697,8 +688,12 @@
                             <div class="ttm-history-box-border"></div><!-- ttm-history-box-border  -->
                             <div class="ttm-history-box-details">
                                 <div class="ttm-historybox-title"><h5>Software Engineering / Devops</h5></div><!-- historybox-title  -->
-                                <div class="ttm-historybox-description"><!-- description  -->
-                                  <hr />
+                                <div class="ttm-historybox-description">
+                                    We implore the user of sleek, stylish easy to navigate user interfaces while ensuring that your applications are top-notch and  functioning optimally providing a perfect blend between style and performance.
+                                    <!-- description  -->
+                                    <div class="separator">
+                                        <div class="sep-line mt-25 mb-25"></div>
+                                    </div>
                                 </div>
                                 <div class="ttm-historybox-description" align="left"><!-- description  -->
 
@@ -717,7 +712,7 @@
                 </div><!-- row end-->
                 <div class="row">
                     <div class="col-md-12 text-center mt-45 res-991-mt-30">
-                        <p class="mb-0">Don’t hesitate, contact us for better help and services. <strong><u><a href="#" class="ttm-textcolor-darkgrey"> View more Services</a></u></strong></p>
+                        <p class="mb-0">Don’t hesitate, contact us for better help and services.</p>
                     </div>
                 </div>
             </div>
@@ -748,83 +743,18 @@
                                     <!-- section title -->
                                     <div class="section-title with-desc clearfix">
                                         <div class="title-header">
-                                            <h5>Why Altech</h5>
+                                            <h5>Why Kocia</h5>
                                             <h2 class="title">We deal with the aspects of professional <span>IT Services</span></h2>
                                         </div>
                                         <div class="title-desc">
                                             <p>Our IT services converge business and technology experts to help to manage business processes of all categories.</p>
                                         </div>
                                     </div><!-- section title end -->
-                                    <div class="row mt-40">
-                                        <div class="col-12">
-                                            <!-- featured-icon-box -->
-                                            <div class="featured-icon-box style2 left-icon icon-align-top">
-                                                <div class="featured-icon"><!-- featured-icon -->
-                                                    <div class="ttm-icon ttm-icon_element-border ttm-icon_element-color-white ttm-icon_element-size-md">
-                                                        <i class="flaticon flaticon-process"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="featured-content">
-                                                    <div class="featured-title"><!-- featured title -->
-                                                        <h5>Product Designs</h5>
-                                                    </div>
-                                                    <div class="featured-desc"><!-- featured desc -->
-                                                        <p>Our firm is expert to create an efficient user interface that makes user interaction is lively.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <!-- separator -->
-                                    <div class="separator">
-                                        <div class="sep-line mt-25 mb-25"></div>
-                                    </div>
+
                                     <!-- separator -->
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <!-- featured-icon-box -->
-                                            <div class="featured-icon-box style2 left-icon icon-align-top">
-                                                <div class="featured-icon"><!-- featured-icon -->
-                                                    <div class="ttm-icon ttm-icon_element-border ttm-icon_element-color-white ttm-icon_element-size-md">
-                                                        <i class="flaticon flaticon-system"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="featured-content">
-                                                    <div class="featured-title"><!-- featured title -->
-                                                        <h5>Big Data &amp; Analytics</h5>
-                                                    </div>
-                                                    <div class="featured-desc"><!-- featured desc -->
-                                                        <p>Statistical analysis to help an organization to gain insights from large information web sets.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- separator -->
-                                    <div class="separator">
-                                        <div class="sep-line mt-25 mb-25"></div>
-                                    </div>
-                                    <!-- separator -->
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <!-- featured-icon-box -->
-                                            <div class="featured-icon-box style2 left-icon icon-align-top">
-                                                <div class="featured-icon"><!-- featured-icon -->
-                                                    <div class="ttm-icon ttm-icon_element-border ttm-icon_element-color-white ttm-icon_element-size-md">
-                                                        <i class="flaticon flaticon-data"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="featured-content">
-                                                    <div class="featured-title"><!-- featured title -->
-                                                        <h5>Maintain App Data</h5>
-                                                    </div>
-                                                    <div class="featured-desc"><!-- featured desc -->
-                                                        <p>We Create the optimal platform to develop and run digital applications for our clients app.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -842,104 +772,17 @@
                         <!-- section-title -->
                         <div class="section-title style2 clearfix">
                             <div class="title-header">
-                                <h5>About us</h5>
-                                <h2 class="title">Meet our <span>Leadership</span></h2>
+
+                                <h2 class="title"> Our core <span>Value</span></h2>
                             </div>
-                            <div class="title-desc">The positive distinction within the World Inspiring of Success and Connections of People and Organizations.</div>
+                            <div class="title-desc">We enable business and organisations carry out effective management or processes without the hassle that comes with it.</div>
                         </div><!-- section-title end -->
                     </div>
-                    <div class="col-lg-3 col-xl-2 col-md-3">
-                        <div class="text-md-right">
-                            <a class="ttm-btn ttm-btn-size-md ttm-btn-style-border ttm-btn-color-darkgrey mb-40" href="#" title=""> Read More </a>
-                        </div>
-                    </div>
+
                 </div>
                 <!-- row end -->
                 <!-- row -->
-                <div class="row">
-                    <div class="team-slide owl-carousel" data-item="3" data-nav="false" data-dots="false" data-auto="false">
-                        <!-- featured-imagebox-team -->
-                        <div class="featured-imagebox featured-imagebox-team style1">
-                            <div class="featured-thumbnail"><!-- featured-thumbnail -->
-                                <img class="img-fluid lazyload" data-src="images/team-member/team-img01.jpg" alt="image">
-                                <div class="ttm-social-links-wrapper">
-                                    <ul class="social-icons list-inline"><!-- social-icons -->
-                                        <li class="social-facebook"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li class="social-twitter"><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                        <li class="social-googleplus"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="featured-content box-shadow">
-                                <div class="featured-title"><!-- featured-title -->
-                                    <h5><a href="team-details.html">Jennifer Garcia</a></h5>
-                                </div>
-                                <p class="category">IT Service Officer</p><!-- category -->
-                            </div>
-                        </div><!-- featured-imagebox-team end-->
-                        <!-- featured-imagebox-team -->
-                        <div class="featured-imagebox featured-imagebox-team style1">
-                            <div class="featured-thumbnail"><!-- featured-thumbnail -->
-                                <img class="img-fluid lazyload" data-src="images/team-member/team-img02.jpg" alt="image">
-                                <div class="ttm-social-links-wrapper">
-                                    <ul class="social-icons list-inline"><!-- social-icons -->
-                                        <li class="social-facebook"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li class="social-twitter"><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                        <li class="social-googleplus"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="featured-content box-shadow">
-                                <div class="featured-title"><!-- featured-title -->
-                                    <h5><a href="team-details.html">Robert Liam</a></h5>
-                                </div>
-                                <p class="category">Web Designer</p><!-- category -->
-                            </div>
-                        </div><!-- featured-imagebox-team end-->
-                        <!-- featured-imagebox-team -->
-                        <div class="featured-imagebox featured-imagebox-team style1">
-                            <div class="featured-thumbnail"><!-- featured-thumbnail -->
-                                <img class="img-fluid lazyload" data-src="images/team-member/team-img03.jpg" alt="image">
-                                <div class="ttm-social-links-wrapper">
-                                    <ul class="social-icons list-inline"><!-- social-icons -->
-                                        <li class="social-facebook"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li class="social-twitter"><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                        <li class="social-googleplus"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="featured-content box-shadow">
-                                <div class="featured-title"><!-- featured-title -->
-                                    <h5><a href="team-details.html">Jessica Ethan</a></h5>
-                                </div>
-                                <p class="category">Project Manager</p><!-- category -->
-                            </div>
-                        </div><!-- featured-imagebox-team end-->
-                        <!-- featured-imagebox-team -->
-                        <div class="featured-imagebox featured-imagebox-team style1">
-                            <div class="featured-thumbnail"><!-- featured-thumbnail -->
-                                <img class="img-fluid lazyload" data-src="images/team-member/team-img04.jpg" alt="image">
-                                <div class="ttm-social-links-wrapper">
-                                    <ul class="social-icons list-inline"><!-- social-icons -->
-                                        <li class="social-facebook"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li class="social-twitter"><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li class="social-linkedin"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                        <li class="social-googleplus"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="featured-content box-shadow">
-                                <div class="featured-title"><!-- featured-title -->
-                                    <h5><a href="team-details.html">Amanda Brown</a></h5>
-                                </div>
-                                <p class="category">Consultant Officer</p><!-- category -->
-                            </div>
-                        </div><!-- featured-imagebox-team end-->
-                    </div>
-                </div><!-- row end-->
+                <!-- row end-->
             </div>
         </section>
         <!-- team-section end -->
@@ -953,7 +796,7 @@
                         <div class="text-center">
                             <div class="ttm-play-icon-btn mb-35">
                                 <div class="ttm-play-icon-animation">
-                                    <a href="https://youtu.be/7e90gBu4pas" target="_self" class="ttm_prettyphoto">
+                                    <a href="https://youtu.be/6F1Y4q2MTws" target="_self" class="ttm_prettyphoto">
                                         <div class="ttm-icon ttm-icon_element-bgcolor-white ttm-icon_element-size-sm ttm-icon_element-style-round">
                                             <i class="fa fa-play"></i>
                                         </div>
@@ -963,13 +806,11 @@
                             <!-- section-title -->
                             <div class="section-title row-title clearfix">
                                 <div class="title-header">
-                                    <h2 class="title">We Provide Outsourced IT Services For Small & <span>Mid-Sized Business</span></h2>
+                                    <h2 class="title">We Provide IT Services For Small, <span>Mid-Sized</span> & Large Businesses</span></h2>
                                 </div>
-                                <div class="title-desc">Appropriate for your specific business, making it easy for<br> you to have quality IT services. What We Do</div>
+                                <div class="title-desc">Appropriate for your specific business, making it easy for<br> you to have quality IT services is what We Do</div>
                             </div><!-- section-title end -->
-                            <div class="mt-40">
-                                <a href="#" class="ttm-btn ttm-btn-size-md ttm-btn-style-border ttm-btn-color-white">More Services</a>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -992,25 +833,46 @@
                                     <div class="section-title with-desc clearfix">
                                         <div class="title-header">
                                             <h5>What We Do</h5>
-                                            <h2 class="title">We help you to grow your business <span>Exponentially</span></h2>
+
                                         </div>
                                     </div><!-- section title end -->
                                     <!-- progress-bar -->
-                                    <div class="ttm-progress-bar" data-percent="90%">
-                                        <div class="progress-bar-title">UI/UX Design</div><!-- progress-bar-title -->
-                                        <div class="progress-bar-inner">
-                                            <div class="progress-bar progress-bar-color-bar_skincolor"></div>
-                                        </div>
-                                        <div class="progress-bar-percent" data-percent="90">90%</div><!-- progress-bar-percent -->
+                                    <div class="ttm-progress-bar" data-percent="100%">
+                                        <div class="progress-bar-title">NETWORK & IT INFRASTRUCTURE
+                                        </div><!-- progress-bar-title -->
+
+                                       <!-- progress-bar-percent -->
                                     </div>
                                     <!-- progress-bar END -->
                                     <!-- progress-bar -->
-                                    <div class="ttm-progress-bar" data-percent="80%">
-                                        <div class="progress-bar-title">App Development</div><!-- progress-bar-TITLE -->
-                                        <div class="progress-bar-inner">
-                                            <div class="progress-bar progress-bar-color-bar_skincolor"></div>
-                                        </div>
-                                        <div class="progress-bar-percent" data-percent="80">80%</div><!-- progress-bar-PERCENT -->
+                                    <div class="ttm-progress-bar" data-percent="100%">
+                                        <div class="progress-bar-title">ENTERPRISE SECURITY
+                                        </div><!-- progress-bar-TITLE -->
+
+                                       <!-- progress-bar-PERCENT -->
+                                    </div>
+                                    <div class="ttm-progress-bar" data-percent="100%">
+                                        <div class="progress-bar-title">CLOUD SERVICES
+
+                                        </div><!-- progress-bar-TITLE -->
+
+                                       <!-- progress-bar-PERCENT -->
+                                    </div>
+
+                                    <div class="ttm-progress-bar" data-percent="100%">
+                                        <div class="progress-bar-title">MANAGED IT SERVICE
+
+                                        </div><!-- progress-bar-TITLE -->
+
+                                       <!-- progress-bar-PERCENT -->
+                                    </div>
+
+                                    <div class="ttm-progress-bar" data-percent="100%">
+                                        <div class="progress-bar-title">SOFTWARE ENGINEERING AND DEVOPS
+
+
+                                        </div><!-- progress-bar-TITLE -->
+                                       <!-- progress-bar-PERCENT -->
                                     </div>
                                     <!-- progress-bar END -->
                                 </div><!-- spacing-2 END -->
@@ -1029,10 +891,10 @@
                                         <div class="testimonial-content"><!-- testimonials-content -->
                                             <div class="testimonial-avatar">
                                                 <div class="testimonial-img"><!-- testimonials-img -->
-                                                    <img class="img-center lazyload" data-src="images/testimonial/01.jpg" alt="testimonial-img">
+                                                    <img class="img-center lazyload" data-src="images/client/client-06.png" alt="testimonial-img">
                                                 </div>
                                             </div>
-                                            <blockquote>Our team discussed every single detail to make sure Creatives Planet is the most versatile and unique theme created so far. No coding skills.</blockquote>
+                                            <blockquote>We loved the user Interface, the experience was just too awesome, we look forward to working with Kocia on our next project</blockquote>
                                             <div class="ttm-ratting-star">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -1041,8 +903,8 @@
                                                 <i class="fa fa-star"></i>
                                             </div>
                                             <div class="testimonial-caption"><!-- testimonials-caption -->
-                                                <h6>Victor Williamson</h6>
-                                                <label>Web Devloper</label>
+                                                <h6>Roy Ekekwe</h6>
+                                                <label>360 Pharmacy</label>
                                             </div>
                                         </div>
                                     </div>
@@ -1051,11 +913,9 @@
                                     <div class="testimonials text-center">
                                         <div class="testimonial-content"><!-- testimonials-content -->
                                             <div class="testimonial-avatar">
-                                                <div class="testimonial-img"><!-- testimonials-img -->
-                                                    <img class="img-center lazyload" data-src="images/testimonial/02.jpg" alt="testimonial-img">
-                                                </div>
+
                                             </div>
-                                            <blockquote>Our team discussed every single detail to make sure Creatives Planet is the most versatile and unique theme created so far. No coding skills.</blockquote>
+                                            <blockquote>We like the professsionalism Kocia applied to our last major project, even though we thought some features could not yet be supported by devices but Kocial brought in the future to our present. Recommended 100%.</blockquote>
                                             <div class="ttm-ratting-star">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
@@ -1064,34 +924,14 @@
                                                 <i class="fa fa-star"></i>
                                             </div>
                                             <div class="testimonial-caption"><!-- testimonials-caption -->
-                                                <h6>Victor Williamson</h6>
-                                                <label>Web Devloper</label>
+                                                <h6>Ejike</h6>
+                                                <label>Slogani Consults</label>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- testimonials END -->
                                     <!-- testimonials -->
-                                    <div class="testimonials text-center">
-                                        <div class="testimonial-content"><!-- testimonials-content -->
-                                            <div class="testimonial-avatar">
-                                                <div class="testimonial-img"><!-- testimonials-img -->
-                                                    <img class="img-center lazyload" data-src="images/testimonial/03.jpg" alt="testimonial-img">
-                                                </div>
-                                            </div>
-                                            <blockquote>Our team discussed every single detail to make sure Creatives Planet is the most versatile and unique theme created so far. No coding skills.</blockquote>
-                                            <div class="ttm-ratting-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <div class="testimonial-caption"><!-- testimonials-caption -->
-                                                <h6>Victor Williamson</h6>
-                                                <label>Web Devloper</label>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <!-- testimonials END -->
                                 </div>
                             </div>
@@ -1110,7 +950,7 @@
                         <!-- section title -->
                         <div class="section-title text-center with-desc clearfix">
                             <div class="title-header">
-                                <h5>how it work</h5>
+                                <h5>how it works</h5>
                                 <h2 class="title">Check Out Our Work <span>Process</span></h2>
                             </div>
                         </div><!-- section title end -->
@@ -1122,50 +962,50 @@
                         <div class="ttm-processbox-wrapper">
                             <div class="ttm-processbox text-center">
                                 <div class="ttm-box-image">
-                                    <img class="img-fluid lazyload" data-src="images/step-one.jpg" alt="step-one" title="step-one">
+
                                     <div class="process-num">
                                         <span class="number">01</span>
                                     </div>
                                 </div>
                                 <div class="featured-content">
-                                    <div class="featured-title"><h5>Choose a Service</h5></div>
-                                    <div class="ttm-box-description">Aute irure dolor reprehenderit velit esse cillum dolore fugiat</div>
+                                    <div class="featured-title"><h5>Contact us</h5></div>
+
                                 </div>
                             </div>
                             <div class="ttm-processbox text-center">
                                 <div class="ttm-box-image">
-                                    <img class="img-fluid lazyload" data-src="images/step-two.jpg" alt="step-two" title="step-two">
+
                                     <div class="process-num">
                                         <span class="number">02</span>
                                     </div>
                                 </div>
                                 <div class="featured-content">
-                                    <div class="featured-title"><h5>Request a Meeting</h5></div>
-                                    <div class="ttm-box-description">Aute irure dolor reprehenderit velit esse cillum dolore fugiat</div>
+                                    <div class="featured-title"><h5>Schedule a Meeting</h5></div>
+
                                 </div>
                             </div>
                             <div class="ttm-processbox text-center">
                                 <div class="ttm-box-image">
-                                    <img class="img-fluid lazyload" data-src="images/step-three.jpg" alt="step-three" title="step-three">
+
                                     <div class="process-num">
                                         <span class="number">03</span>
                                     </div>
                                 </div>
                                 <div class="featured-content">
                                     <div class="featured-title"><h5>Receive Custom Plan</h5></div>
-                                    <div class="ttm-box-description">Aute irure dolor reprehenderit velit esse cillum dolore fugiat</div>
+
                                 </div>
                             </div>
                             <div class="ttm-processbox text-center">
                                 <div class="ttm-box-image">
-                                    <img class="img-fluid lazyload" data-src="images/step-four.jpg" alt="step-four" title="step-four">
+
                                     <div class="process-num">
                                         <span class="number">04</span>
                                     </div>
                                 </div>
                                 <div class="featured-content">
-                                    <div class="featured-title"><h5>Let’s Make it Happen</h5></div>
-                                    <div class="ttm-box-description">Aute irure dolor reprehenderit velit esse cillum dolore fugiat</div>
+                                    <div class="featured-title"><h5>We Make it Happen</h5></div>
+
                                 </div>
                             </div>
                         </div>
@@ -1613,7 +1453,7 @@
                 <div class="row copyright">
                     <div class="col-md-6">
                         <div class="">
-                            <span>Copyright © 2019&nbsp;<a href="#">Altech</a> Template by <a href="https://themetechmount.com/" target="_blank">Themetechmount</a></span>
+                            <span>Copyright © 2019&nbsp;<a href="#">Kocia</a> Template by <a href="https://themetechmount.com/" target="_blank">Themetechmount</a></span>
                         </div>
                     </div>
                     <div class="col-md-6">
